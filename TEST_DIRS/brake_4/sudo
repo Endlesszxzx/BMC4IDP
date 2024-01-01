@@ -1,0 +1,1 @@
+1 chmod 666 /proc/sys/vm/drop_caches

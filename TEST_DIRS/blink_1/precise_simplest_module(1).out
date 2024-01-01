@@ -1,0 +1,54 @@
+CBMC version 5.62.0 () 64-bit x86_64 linux
+Parsing blink_1.c
+Converting
+Type-checking blink_1
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Unwinding loop VirtualizeTimerC_0_updateFromTimer_runTask.0 iteration 1 file blink_1.c line 3338 function VirtualizeTimerC_0_updateFromTimer_runTask thread 1
+Unwinding loop VirtualizeTimerC_0_fireTimers.0 iteration 1 file blink_1.c line 3375 function VirtualizeTimerC_0_fireTimers thread 1
+Unwinding loop VirtualizeTimerC_0_fireTimers.0 iteration 1 file blink_1.c line 3375 function VirtualizeTimerC_0_fireTimers thread 2
+Runtime Symex: 1.00937s
+Adding constraints
+using sc expand memory model
+start to make constraint
+success make constraint
+--------------------log constraint nums:------------------
+fr : 30068
+nested-isr : 702
+po : 487
+rf : 1079
+rf-order : 1079
+rf-some : 115
+rfi : 189
+thread-spawn : 182
+ws-ext : 1082
+constraints sum : 34983
+size of program expression: 38128 steps
+no slicing due to threads
+Generated 2 VCC(s), 2 remaining after simplification
+Runtime Postprocess Equation: 6.81489s
+Passing problem to propositional reduction
+converting SSA
+Runtime Convert SSA: 3.69686s
+Running propositional reduction
+Post-processing
+Runtime Post-process: 0.000570551s
+Solving with MiniSAT 2.2.1 with simplifier
+179194 variables, 867492 clauses
+decisions: 262680
+propagations: 14951837
+conflicts: 33220
+SAT checker: instance is UNSATISFIABLE
+Runtime Solver: 43.1777s
+Runtime decision procedure: 46.8812s
+
+** Results:
+blink_1.c function VirtualizeTimerC_0_fireTimers
+[VirtualizeTimerC_0_fireTimers.assertion.1] line 3387 assertion (signed int)timer->isrunning == 0: SUCCESS
+
+** 0 of 1 failed (1 iterations)
+VERIFICATION SUCCESSFUL
