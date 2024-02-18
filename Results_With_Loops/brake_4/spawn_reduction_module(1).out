@@ -1,0 +1,859 @@
+CBMC version 5.62.0 (ec1d828-dirty) 64-bit x86_64 linux
+Parsing brake_4.c
+Converting
+Type-checking brake_4
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Runtime Symex: 0.179222s
+Adding constraints
+using sc expand memory model
+ssa num:1575
+start to make constraint
+508
+success make constraint
+--------------------log constraint nums:------------------
+fr : 84
+fr-begin : 13
+fr-end : 13
+nested-isr : 272
+ni_eq : 12
+po : 441
+rf : 178
+rf-begin : 178
+rf-end : 178
+rf-order : 178
+rf-some : 215
+rfi : 99
+spawn-before-fr-false : 45
+spawn-before-ws : 14
+thread-spawn : 322
+ws-begin : 14
+ws-end : 14
+constraints sum : 2270
+spawn_relaxing_cons_nums: 925
+size of program expression: 3845 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Runtime Postprocess Equation: 0.096116s
+Passing problem to propositional reduction
+converting SSA
+Runtime Convert SSA: 3.11326s
+Running propositional reduction
+Post-processing
+Runtime Post-process: 0.00124748s
+Solving with MiniSAT 2.2.1 with simplifier
+475907 variables, 2138605 clauses
+decisions: 743748
+propagations: 129255227
+conflicts: 162498
+SAT checker: instance is SATISFIABLE
+Runtime Solver: 79.8088s
+Runtime decision procedure: 82.9224s
+Building error trace
+
+** Results:
+brake_4.c function task_compute
+[task_compute.assertion.1] line 260 assertion fabs(vkmh-tmp)<=0.001: FAILURE
+
+Trace for task_compute.assertion.1:
+
+State 16 file brake_4.c function __CPROVER_initialize line 191 thread 0
+----------------------------------------------------
+  __CPROVER_thread_priorities[0l]=5 (00000000 00000000 00000000 00000101)
+
+State 17 file brake_4.c function __CPROVER_initialize line 191 thread 0
+----------------------------------------------------
+  __CPROVER_thread_priorities[1l]=5 (00000000 00000000 00000000 00000101)
+
+State 18 file brake_4.c function __CPROVER_initialize line 191 thread 0
+----------------------------------------------------
+  __CPROVER_thread_priorities[2l]=5 (00000000 00000000 00000000 00000101)
+
+State 19 file brake_4.c function __CPROVER_initialize line 191 thread 0
+----------------------------------------------------
+  __CPROVER_thread_priorities[3l]=5 (00000000 00000000 00000000 00000101)
+
+State 20 file brake_4.c function __CPROVER_initialize line 191 thread 0
+----------------------------------------------------
+  __CPROVER_thread_priorities[4l]=22 (00000000 00000000 00000000 00010110)
+
+State 22 file brake_4.c function __CPROVER_initialize line 192 thread 0
+----------------------------------------------------
+  __CPROVER_threads[0l]="c::task_RR_Wheel" (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 23 file brake_4.c function __CPROVER_initialize line 192 thread 0
+----------------------------------------------------
+  __CPROVER_threads[1l]="c::task_FR_Wheel" (00000011 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 24 file brake_4.c function __CPROVER_initialize line 192 thread 0
+----------------------------------------------------
+  __CPROVER_threads[2l]="c::task_FL_Wheel" (00000100 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 25 file brake_4.c function __CPROVER_initialize line 192 thread 0
+----------------------------------------------------
+  __CPROVER_threads[3l]="c::task_RL_Wheel" (00000101 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 26 file brake_4.c function __CPROVER_initialize line 192 thread 0
+----------------------------------------------------
+  __CPROVER_threads[4l]="c::task_compute" (00000110 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 40 file brake_acc_nodiv_ctrl_data.c function __CPROVER_initialize line 24 thread 0
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_P.Distribution_Gain[0l]=0.31 (00111111 11010011 11010111 00001010 00111101 01110000 10100011 11010111)
+
+State 41 file brake_acc_nodiv_ctrl_data.c function __CPROVER_initialize line 24 thread 0
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_P.Distribution_Gain[1l]=0.29 (00111111 11010010 10001111 01011100 00101000 11110101 11000010 10001111)
+
+State 42 file brake_acc_nodiv_ctrl_data.c function __CPROVER_initialize line 24 thread 0
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_P.Distribution_Gain[2l]=0.21 (00111111 11001010 11100001 01000111 10101110 00010100 01111010 11100001)
+
+State 43 file brake_acc_nodiv_ctrl_data.c function __CPROVER_initialize line 24 thread 0
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_P.Distribution_Gain[3l]=0.19 (00111111 11001000 01010001 11101011 10000101 00011110 10111000 01010010)
+
+Assumption:
+  argc' >= 0
+
+State 103 function __CPROVER__start thread 0
+----------------------------------------------------
+  INPUT argc: 1074790400 (01000000 00010000 00000000 00000000)
+
+State 107 file brake_4.c function __CPROVER__start line 556 thread 0
+----------------------------------------------------
+  argc=1074790400 (01000000 00010000 00000000 00000000)
+
+State 108 file brake_4.c function __CPROVER__start line 556 thread 0
+----------------------------------------------------
+  argv=argv' (00000111 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 115 file brake_acc_nodiv_ctrl.c function brake_acc_nodiv_ctrl_initialize line 479 thread 0
+----------------------------------------------------
+  realSize=sizeof(real_T) /*8ul*/  (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00001000)
+
+State 119 file rtGetNaN.c function rtGetNaN line 32 thread 0
+----------------------------------------------------
+  bitsPerReal=64ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 01000000)
+
+State 121 file rtGetNaN.c function rtGetNaN line 33 thread 0
+----------------------------------------------------
+  nan=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 124 file rtGetNaN.c function rtGetNaN line 41 thread 0
+----------------------------------------------------
+  one=1 (00000000 00000001)
+
+State 126 file rtGetNaN.c function rtGetNaN line 45 thread 0
+----------------------------------------------------
+  machByteOrder=/*enum*/LittleEndian (00000000 00000000 00000000 00000000)
+
+State 129 file rtGetNaN.c function rtGetNaN line 52 thread 0
+----------------------------------------------------
+  tmpVal={ .bitVal={ .words={ .wordL=0u, .wordH=0u } } } ({ { 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 } })
+
+State 130 file rtGetNaN.c function rtGetNaN line 54 thread 0
+----------------------------------------------------
+  byte_extract_little_endian(tmpVal, 4l, unsigned int)=4294443008u (11111111 11111000 00000000 00000000)
+
+State 131 file rtGetNaN.c function rtGetNaN line 55 thread 0
+----------------------------------------------------
+  byte_extract_little_endian(tmpVal, 0l, unsigned int)=0u (00000000 00000000 00000000 00000000)
+
+State 132 file rtGetNaN.c function rtGetNaN line 56 thread 0
+----------------------------------------------------
+  nan=-NAN (11111111 11111000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 136 file rt_nonfinite.c function rt_InitInfAndNaN line 44 thread 0
+----------------------------------------------------
+  rtNaN=-NAN (11111111 11111000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 140 file rtGetNaN.c function rtGetNaNF line 86 thread 0
+----------------------------------------------------
+  nanF.wordL={ .wordLreal=0.0f } (00000000 00000000 00000000 00000000)
+
+State 142 file rtGetNaN.c function rtGetNaNF line 88 thread 0
+----------------------------------------------------
+  one=1 (00000000 00000001)
+
+State 144 file rtGetNaN.c function rtGetNaNF line 92 thread 0
+----------------------------------------------------
+  machByteOrder=/*enum*/LittleEndian (00000000 00000000 00000000 00000000)
+
+State 147 file rtGetNaN.c function rtGetNaNF line 96 thread 0
+----------------------------------------------------
+  byte_extract_little_endian(nanF.wordL, 0l, unsigned int)=4290772992u (11111111 11000000 00000000 00000000)
+
+State 151 file rt_nonfinite.c function rt_InitInfAndNaN line 45 thread 0
+----------------------------------------------------
+  rtNaNF=-NAN (11111111 11000000 00000000 00000000)
+
+State 155 file rtGetInf.c function rtGetInf line 32 thread 0
+----------------------------------------------------
+  bitsPerReal=64ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 01000000)
+
+State 157 file rtGetInf.c function rtGetInf line 33 thread 0
+----------------------------------------------------
+  inf=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 160 file rtGetInf.c function rtGetInf line 41 thread 0
+----------------------------------------------------
+  one=1 (00000000 00000001)
+
+State 162 file rtGetInf.c function rtGetInf line 45 thread 0
+----------------------------------------------------
+  machByteOrder=/*enum*/LittleEndian (00000000 00000000 00000000 00000000)
+
+State 165 file rtGetInf.c function rtGetInf line 52 thread 0
+----------------------------------------------------
+  tmpVal={ .bitVal={ .words={ .wordL=0u, .wordH=0u } } } ({ { 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 } })
+
+State 166 file rtGetInf.c function rtGetInf line 54 thread 0
+----------------------------------------------------
+  byte_extract_little_endian(tmpVal, 4l, unsigned int)=2146435072u (01111111 11110000 00000000 00000000)
+
+State 167 file rtGetInf.c function rtGetInf line 55 thread 0
+----------------------------------------------------
+  byte_extract_little_endian(tmpVal, 0l, unsigned int)=0u (00000000 00000000 00000000 00000000)
+
+State 168 file rtGetInf.c function rtGetInf line 56 thread 0
+----------------------------------------------------
+  inf=+INFINITY (01111111 11110000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 172 file rt_nonfinite.c function rt_InitInfAndNaN line 46 thread 0
+----------------------------------------------------
+  rtInf=+INFINITY (01111111 11110000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 175 file rtGetInf.c function rtGetInfF line 86 thread 0
+----------------------------------------------------
+  infF={ .wordL={ .wordLreal=0.0f } } ({ 00000000 00000000 00000000 00000000 })
+
+State 176 file rtGetInf.c function rtGetInfF line 87 thread 0
+----------------------------------------------------
+  byte_extract_little_endian(infF.wordL, 0l, unsigned int)=2139095040u (01111111 10000000 00000000 00000000)
+
+State 179 file rt_nonfinite.c function rt_InitInfAndNaN line 47 thread 0
+----------------------------------------------------
+  rtInfF=+INFINITY (01111111 10000000 00000000 00000000)
+
+State 183 file rtGetInf.c function rtGetMinusInf line 97 thread 0
+----------------------------------------------------
+  bitsPerReal=64ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 01000000)
+
+State 185 file rtGetInf.c function rtGetMinusInf line 98 thread 0
+----------------------------------------------------
+  minf=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 188 file rtGetInf.c function rtGetMinusInf line 106 thread 0
+----------------------------------------------------
+  one=1 (00000000 00000001)
+
+State 190 file rtGetInf.c function rtGetMinusInf line 110 thread 0
+----------------------------------------------------
+  machByteOrder=/*enum*/LittleEndian (00000000 00000000 00000000 00000000)
+
+State 193 file rtGetInf.c function rtGetMinusInf line 117 thread 0
+----------------------------------------------------
+  tmpVal={ .bitVal={ .words={ .wordL=0u, .wordH=0u } } } ({ { 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 } })
+
+State 194 file rtGetInf.c function rtGetMinusInf line 119 thread 0
+----------------------------------------------------
+  byte_extract_little_endian(tmpVal, 4l, unsigned int)=4293918720u (11111111 11110000 00000000 00000000)
+
+State 195 file rtGetInf.c function rtGetMinusInf line 120 thread 0
+----------------------------------------------------
+  byte_extract_little_endian(tmpVal, 0l, unsigned int)=0u (00000000 00000000 00000000 00000000)
+
+State 196 file rtGetInf.c function rtGetMinusInf line 121 thread 0
+----------------------------------------------------
+  minf=-INFINITY (11111111 11110000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 200 file rt_nonfinite.c function rt_InitInfAndNaN line 48 thread 0
+----------------------------------------------------
+  rtMinusInf=-INFINITY (11111111 11110000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 203 file rtGetInf.c function rtGetMinusInfF line 151 thread 0
+----------------------------------------------------
+  minfF={ .wordL={ .wordLreal=0.0f } } ({ 00000000 00000000 00000000 00000000 })
+
+State 204 file rtGetInf.c function rtGetMinusInfF line 152 thread 0
+----------------------------------------------------
+  byte_extract_little_endian(minfF.wordL, 0l, unsigned int)=4286578688u (11111111 10000000 00000000 00000000)
+
+State 207 file rt_nonfinite.c function rt_InitInfAndNaN line 49 thread 0
+----------------------------------------------------
+  rtMinusInfF=-INFINITY (11111111 10000000 00000000 00000000)
+
+State 209 file brake_acc_nodiv_ctrl.c function brake_acc_nodiv_ctrl_initialize line 483 thread 0
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_P.ABS_FL_Wheel.positive_UpperSat=+INFINITY (01111111 11110000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 210 file brake_acc_nodiv_ctrl.c function brake_acc_nodiv_ctrl_initialize line 484 thread 0
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_P.ABS_FR_Wheel.positive_UpperSat=+INFINITY (01111111 11110000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 211 file brake_acc_nodiv_ctrl.c function brake_acc_nodiv_ctrl_initialize line 485 thread 0
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_P.ABS_RL_Wheel.positive_UpperSat=+INFINITY (01111111 11110000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 212 file brake_acc_nodiv_ctrl.c function brake_acc_nodiv_ctrl_initialize line 486 thread 0
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_P.ABS_RR_Wheel.positive_UpperSat=+INFINITY (01111111 11110000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 213 file brake_acc_nodiv_ctrl.c function brake_acc_nodiv_ctrl_initialize line 532 thread 0
+----------------------------------------------------
+  RT_Buffer0=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 214 file brake_acc_nodiv_ctrl.c function brake_acc_nodiv_ctrl_initialize line 535 thread 0
+----------------------------------------------------
+  RT4_Buffer0=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 215 file brake_acc_nodiv_ctrl.c function brake_acc_nodiv_ctrl_initialize line 538 thread 0
+----------------------------------------------------
+  RT1_Buffer0=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 216 file brake_acc_nodiv_ctrl.c function brake_acc_nodiv_ctrl_initialize line 541 thread 0
+----------------------------------------------------
+  RT2_Buffer0=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 217 file brake_acc_nodiv_ctrl.c function brake_acc_nodiv_ctrl_initialize line 544 thread 0
+----------------------------------------------------
+  RT3_Buffer0=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 222 file brake_4.c function main line 565 thread 0
+----------------------------------------------------
+  _inputs=&brake_acc_nodiv_ctrl_U (00001000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 223 file brake_4.c function havocInputs line 173 thread 0
+----------------------------------------------------
+  inputs={ .In_BrakePedal=-0.5, .In_RRRotation=4.503600e+15, .In_RLRotation=0.0,
+    .In_FRRotation=-1.187995e+14, .In_FLRotation=-NAN } ({ 10111111 11100000 00000000 00000000 00000000 00000000 00000000 00000000, 01000011 00110000 00000000 00000000 00000000 00000010 01111111 11111111, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 11000010 11011011 00000011 00001010 11111111 01101111 11111111 11100000, 11111111 11110000 00000000 00000000 00000000 00000001 00000000 00000000 })
+
+State 224 file brake_4.c function havocInputs line 183 thread 0
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_U.In_BrakePedal=-0.5 (10111111 11100000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 225 file brake_4.c function havocInputs line 183 thread 0
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_U.In_RRRotation=4.503600e+15 (01000011 00110000 00000000 00000000 00000000 00000010 01111111 11111111)
+
+State 226 file brake_4.c function havocInputs line 183 thread 0
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_U.In_RLRotation=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 227 file brake_4.c function havocInputs line 183 thread 0
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_U.In_FRRotation=-1.187995e+14 (11000010 11011011 00000011 00001010 11111111 01101111 11111111 11100000)
+
+State 228 file brake_4.c function havocInputs line 183 thread 0
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_U.In_FLRotation=-NAN (11111111 11110000 00000000 00000000 00000000 00000001 00000000 00000000)
+
+State 264 file brake_4.c function main line 590 thread 0
+----------------------------------------------------
+  result=0 (00000000 00000000 00000000 00000000)
+
+State 268 file brake_4.c function __CPROVER__start line 556 thread 0
+----------------------------------------------------
+  OUTPUT return': 0 (00000000 00000000 00000000 00000000)
+
+State 278 file brake_4.c function task_RR_Wheel line 295 thread 1
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local={ .RT_h=0.0, .RT4=0.0, .RT1=0.0, .RT2=0.0, .RT3=0.0,
+    .RT14=0.0, .RT9=0.0, .RT10=0.0, .RT11=0.0,
+    .RT12=0.0, .vkmh=0.0, .Distribution={ 0.0, 0.0, 0.0, 0.0 }, .Gain1=0.0,
+    .ABS_FL_Wheel={ .Threshold_10kmh=0.0 }, .ABS_FR_Wheel={ .Threshold_10kmh=0.0 },
+    .ABS_RL_Wheel={ .Threshold_10kmh=0.0 },
+    .ABS_RR_Wheel={ .Threshold_10kmh=0.0 } } ({ 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, { 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 }, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, { 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 }, { 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 }, { 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 }, { 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 } })
+
+State 279 file brake_4.c function task_RR_Wheel line 298 thread 1
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local.RT_h=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 280 file brake_4.c function task_RR_Wheel line 301 thread 1
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local.RT4=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 281 file brake_4.c function task_RR_Wheel line 304 thread 1
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local.RT1=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 282 file brake_4.c function task_RR_Wheel line 307 thread 1
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local.RT2=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 283 file brake_4.c function task_RR_Wheel line 310 thread 1
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local.RT3=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 284 file brake_4.c function task_RR_Wheel line 318 thread 1
+----------------------------------------------------
+  rtb_to_int=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 285 file brake_4.c function task_RR_Wheel line 321 thread 1
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local.RT_h=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 286 file brake_4.c function task_RR_Wheel line 324 thread 1
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local.RT4=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 289 file brake_4.c function task_RR_Wheel line 329 thread 1
+----------------------------------------------------
+  u=4.503600e+15 (01000011 00110000 00000000 00000000 00000000 00000010 01111111 11111111)
+
+State 290 file brake_acc_nodiv_ctrl.c function rt_roundd_snf line 195 thread 1
+----------------------------------------------------
+  y=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 294 file brake_acc_nodiv_ctrl.c function rt_roundd_snf line 196 thread 1
+----------------------------------------------------
+  d=4.503600e+15 (01000011 00110000 00000000 00000000 00000000 00000010 01111111 11111111)
+
+State 299 file brake_acc_nodiv_ctrl.c function rt_roundd_snf line 205 thread 1
+----------------------------------------------------
+  y=4.503600e+15 (01000011 00110000 00000000 00000000 00000000 00000010 01111111 11111111)
+
+State 302 file brake_4.c function task_RR_Wheel line 329 thread 1
+----------------------------------------------------
+  rtb_to_int=4.503600e+15 (01000011 00110000 00000000 00000000 00000000 00000010 01111111 11111111)
+
+State 305 file brake_4.c function task_RR_Wheel line 334 thread 1
+----------------------------------------------------
+  rtu_vVehicleVelocitykmh=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 306 file brake_4.c function task_RR_Wheel line 334 thread 1
+----------------------------------------------------
+  rtu_TRequestedTorqueNm=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 307 file brake_4.c function task_RR_Wheel line 334 thread 1
+----------------------------------------------------
+  rtu_wwheelRotationrpm=4.503600e+15 (01000011 00110000 00000000 00000000 00000000 00000010 01111111 11111111)
+
+State 308 file brake_4.c function task_RR_Wheel line 334 thread 1
+----------------------------------------------------
+  localB=&brake_acc_nodiv_ctrl_B_local!1@1.ABS_RR_Wheel (00001001 00000000 00000000 00000000 00000000 00000000 00000000 10011000)
+
+State 309 file brake_4.c function task_RR_Wheel line 334 thread 1
+----------------------------------------------------
+  localP.wheSpdms_Gain=0.05236 (00111111 10101010 11001110 11101001 11110011 01111011 11101011 11010101)
+
+State 310 file brake_4.c function task_RR_Wheel line 334 thread 1
+----------------------------------------------------
+  localP.vms_Gain=0.277778 (00111111 11010001 11000111 00011100 01110001 11000111 00011100 01110010)
+
+State 311 file brake_4.c function task_RR_Wheel line 334 thread 1
+----------------------------------------------------
+  localP.positive_UpperSat=+INFINITY (01111111 11110000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 312 file brake_4.c function task_RR_Wheel line 334 thread 1
+----------------------------------------------------
+  localP.positive_LowerSat=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 313 file brake_4.c function task_RR_Wheel line 334 thread 1
+----------------------------------------------------
+  localP.times_10_Gain=10.0 (01000000 00100100 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 314 file brake_4.c function task_RR_Wheel line 334 thread 1
+----------------------------------------------------
+  localP.slip_abs_on_times_10_Gain=1.0 (00111111 11110000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 315 file brake_4.c function task_RR_Wheel line 334 thread 1
+----------------------------------------------------
+  localP.Threshold_10kmh_Threshold=10.0 (01000000 00100100 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 316 file brake_4.c function task_RR_Wheel line 334 thread 1
+----------------------------------------------------
+  localP.ReleaseBrake_Value=0 (00000000)
+
+State 317 file brake_4.c function task_RR_Wheel line 334 thread 1
+----------------------------------------------------
+  localP.$pad8=0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 318 file brake_acc_nodiv_ctrl.c function brake_acc_nodiv_ct_ABS_RR_Wheel line 76 thread 1
+----------------------------------------------------
+  rtb_RelationalOperator=0 (00000000)
+
+State 319 file brake_acc_nodiv_ctrl.c function brake_acc_nodiv_ct_ABS_RR_Wheel line 77 thread 1
+----------------------------------------------------
+  rtb_vms=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 320 file brake_acc_nodiv_ctrl.c function brake_acc_nodiv_ct_ABS_RR_Wheel line 78 thread 1
+----------------------------------------------------
+  u=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 321 file brake_acc_nodiv_ctrl.c function brake_acc_nodiv_ct_ABS_RR_Wheel line 82 thread 1
+----------------------------------------------------
+  rtb_vms=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 322 file brake_acc_nodiv_ctrl.c function brake_acc_nodiv_ct_ABS_RR_Wheel line 87 thread 1
+----------------------------------------------------
+  u=-2.358079e+14 (11000010 11101010 11001110 11101001 11110011 10000000 00011100 00101000)
+
+State 325 file brake_acc_nodiv_ctrl.c function brake_acc_nodiv_ct_ABS_RR_Wheel line 94 thread 1
+----------------------------------------------------
+  u=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 326 file brake_acc_nodiv_ctrl.c function brake_acc_nodiv_ct_ABS_RR_Wheel line 103 thread 1
+----------------------------------------------------
+  rtb_RelationalOperator=0 (00000000)
+
+State 328 file brake_acc_nodiv_ctrl.c function brake_acc_nodiv_ct_ABS_RR_Wheel line 122 thread 1
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local.ABS_RR_Wheel.Threshold_10kmh=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 330 file brake_4.c function task_RR_Wheel line 344 thread 1
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local.RT1=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 331 file brake_4.c function task_RR_Wheel line 353 thread 1
+----------------------------------------------------
+  RT9=4.503600e+15 (01000011 00110000 00000000 00000000 00000000 00000010 01111111 11111111)
+
+State 336 file brake_4.c function task_FL_Wheel line 364 thread 2
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local={ .RT_h=0.0, .RT4=0.0, .RT1=0.0, .RT2=0.0, .RT3=0.0,
+    .RT14=0.0, .RT9=0.0, .RT10=0.0, .RT11=0.0,
+    .RT12=0.0, .vkmh=0.0, .Distribution={ 0.0, 0.0, 0.0, 0.0 }, .Gain1=0.0,
+    .ABS_FL_Wheel={ .Threshold_10kmh=0.0 }, .ABS_FR_Wheel={ .Threshold_10kmh=0.0 },
+    .ABS_RL_Wheel={ .Threshold_10kmh=0.0 },
+    .ABS_RR_Wheel={ .Threshold_10kmh=0.0 } } ({ 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, { 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 }, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, { 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 }, { 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 }, { 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 }, { 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 } })
+
+State 337 file brake_4.c function task_FL_Wheel line 367 thread 2
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local.RT_h=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 338 file brake_4.c function task_FL_Wheel line 370 thread 2
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local.RT4=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 339 file brake_4.c function task_FL_Wheel line 373 thread 2
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local.RT1=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 340 file brake_4.c function task_FL_Wheel line 376 thread 2
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local.RT2=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 341 file brake_4.c function task_FL_Wheel line 379 thread 2
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local.RT3=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 342 file brake_4.c function task_FL_Wheel line 386 thread 2
+----------------------------------------------------
+  rtb_to_int1=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 343 file brake_4.c function task_FL_Wheel line 387 thread 2
+----------------------------------------------------
+  tmp=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 346 file brake_4.c function task_FL_Wheel line 392 thread 2
+----------------------------------------------------
+  u=-NAN (11111111 11110000 00000000 00000000 00000000 00000001 00000000 00000000)
+
+State 347 file brake_acc_nodiv_ctrl.c function rt_roundd_snf line 195 thread 2
+----------------------------------------------------
+  y=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 351 file brake_acc_nodiv_ctrl.c function rt_roundd_snf line 196 thread 2
+----------------------------------------------------
+  d=-NAN (11111111 11110000 00000000 00000000 00000000 00000001 00000000 00000000)
+
+State 356 file brake_acc_nodiv_ctrl.c function rt_roundd_snf line 205 thread 2
+----------------------------------------------------
+  y=-NAN (11111111 11110000 00000000 00000000 00000000 00000001 00000000 00000000)
+
+State 359 file brake_4.c function task_FL_Wheel line 392 thread 2
+----------------------------------------------------
+  rtb_to_int1=-NAN (11111111 11110000 00000000 00000000 00000000 00000001 00000000 00000000)
+
+State 360 file brake_4.c function task_FL_Wheel line 395 thread 2
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local.RT_h=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 361 file brake_4.c function task_FL_Wheel line 398 thread 2
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local.RT4=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 364 file brake_4.c function task_FL_Wheel line 403 thread 2
+----------------------------------------------------
+  rtu_vVehicleVelocitykmh=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 365 file brake_4.c function task_FL_Wheel line 403 thread 2
+----------------------------------------------------
+  rtu_TRequestedTorqueNm=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 366 file brake_4.c function task_FL_Wheel line 403 thread 2
+----------------------------------------------------
+  rtu_wwheelRotationrpm=-NAN (11111111 11110000 00000000 00000000 00000000 00000001 00000000 00000000)
+
+State 367 file brake_4.c function task_FL_Wheel line 403 thread 2
+----------------------------------------------------
+  localB=&brake_acc_nodiv_ctrl_B_local!2@1.ABS_FL_Wheel (00001010 00000000 00000000 00000000 00000000 00000000 00000000 10000000)
+
+State 368 file brake_4.c function task_FL_Wheel line 403 thread 2
+----------------------------------------------------
+  localP.wheSpdms_Gain=0.05236 (00111111 10101010 11001110 11101001 11110011 01111011 11101011 11010101)
+
+State 369 file brake_4.c function task_FL_Wheel line 403 thread 2
+----------------------------------------------------
+  localP.vms_Gain=0.277778 (00111111 11010001 11000111 00011100 01110001 11000111 00011100 01110010)
+
+State 370 file brake_4.c function task_FL_Wheel line 403 thread 2
+----------------------------------------------------
+  localP.positive_UpperSat=+INFINITY (01111111 11110000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 371 file brake_4.c function task_FL_Wheel line 403 thread 2
+----------------------------------------------------
+  localP.positive_LowerSat=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 372 file brake_4.c function task_FL_Wheel line 403 thread 2
+----------------------------------------------------
+  localP.times_10_Gain=10.0 (01000000 00100100 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 373 file brake_4.c function task_FL_Wheel line 403 thread 2
+----------------------------------------------------
+  localP.slip_abs_on_times_10_Gain=1.0 (00111111 11110000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 374 file brake_4.c function task_FL_Wheel line 403 thread 2
+----------------------------------------------------
+  localP.Threshold_10kmh_Threshold=10.0 (01000000 00100100 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 375 file brake_4.c function task_FL_Wheel line 403 thread 2
+----------------------------------------------------
+  localP.ReleaseBrake_Value=0 (00000000)
+
+State 376 file brake_4.c function task_FL_Wheel line 403 thread 2
+----------------------------------------------------
+  localP.$pad8=0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 377 file brake_acc_nodiv_ctrl.c function brake_acc_nodiv_ct_ABS_RR_Wheel line 76 thread 2
+----------------------------------------------------
+  rtb_RelationalOperator=0 (00000000)
+
+State 378 file brake_acc_nodiv_ctrl.c function brake_acc_nodiv_ct_ABS_RR_Wheel line 77 thread 2
+----------------------------------------------------
+  rtb_vms=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 379 file brake_acc_nodiv_ctrl.c function brake_acc_nodiv_ct_ABS_RR_Wheel line 78 thread 2
+----------------------------------------------------
+  u=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 380 file brake_acc_nodiv_ctrl.c function brake_acc_nodiv_ct_ABS_RR_Wheel line 82 thread 2
+----------------------------------------------------
+  rtb_vms=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 381 file brake_acc_nodiv_ctrl.c function brake_acc_nodiv_ct_ABS_RR_Wheel line 87 thread 2
+----------------------------------------------------
+  u=+NAN (01111111 11110000 00000000 00000000 00000000 00000000 00000000 00000001)
+
+State 384 file brake_acc_nodiv_ctrl.c function brake_acc_nodiv_ct_ABS_RR_Wheel line 103 thread 2
+----------------------------------------------------
+  rtb_RelationalOperator=0 (00000000)
+
+State 386 file brake_acc_nodiv_ctrl.c function brake_acc_nodiv_ct_ABS_RR_Wheel line 122 thread 2
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local.ABS_FL_Wheel.Threshold_10kmh=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 390 file brake_4.c function task_FL_Wheel line 420 thread 2
+----------------------------------------------------
+  tmp=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 395 file brake_4.c function task_FL_Wheel line 429 thread 2
+----------------------------------------------------
+  u=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 396 file brake_acc_nodiv_ctrl.c function rt_roundd_snf line 195 thread 2
+----------------------------------------------------
+  y=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 400 file brake_acc_nodiv_ctrl.c function rt_roundd_snf line 196 thread 2
+----------------------------------------------------
+  d=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 407 file brake_acc_nodiv_ctrl.c function rt_roundd_snf line 200 thread 2
+----------------------------------------------------
+  y=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 413 file brake_4.c function task_FL_Wheel line 428 thread 2
+----------------------------------------------------
+  RT14=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 414 file brake_4.c function task_FL_Wheel line 432 thread 2
+----------------------------------------------------
+  RT12=-NAN (11111111 11110000 00000000 00000000 00000000 00000001 00000000 00000000)
+
+State 421 file brake_4.c function task_FR_Wheel line 442 thread 3
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local={ .RT_h=0.0, .RT4=0.0, .RT1=0.0, .RT2=0.0, .RT3=0.0,
+    .RT14=0.0, .RT9=0.0, .RT10=0.0, .RT11=0.0,
+    .RT12=0.0, .vkmh=0.0, .Distribution={ 0.0, 0.0, 0.0, 0.0 }, .Gain1=0.0,
+    .ABS_FL_Wheel={ .Threshold_10kmh=0.0 }, .ABS_FR_Wheel={ .Threshold_10kmh=0.0 },
+    .ABS_RL_Wheel={ .Threshold_10kmh=0.0 },
+    .ABS_RR_Wheel={ .Threshold_10kmh=0.0 } } ({ 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, { 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 }, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, { 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 }, { 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 }, { 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 }, { 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 } })
+
+State 422 file brake_4.c function task_FR_Wheel line 445 thread 3
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local.RT_h=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 423 file brake_4.c function task_FR_Wheel line 448 thread 3
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local.RT4=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 424 file brake_4.c function task_FR_Wheel line 451 thread 3
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local.RT1=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 425 file brake_4.c function task_FR_Wheel line 454 thread 3
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local.RT2=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 426 file brake_4.c function task_FR_Wheel line 457 thread 3
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local.RT3=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 427 file brake_4.c function task_FR_Wheel line 464 thread 3
+----------------------------------------------------
+  rtb_to_int_k=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 428 file brake_4.c function task_FR_Wheel line 467 thread 3
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local.RT4=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 431 file brake_4.c function task_FR_Wheel line 472 thread 3
+----------------------------------------------------
+  u=-1.187995e+14 (11000010 11011011 00000011 00001010 11111111 01101111 11111111 11100000)
+
+State 432 file brake_acc_nodiv_ctrl.c function rt_roundd_snf line 195 thread 3
+----------------------------------------------------
+  y=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 436 file brake_acc_nodiv_ctrl.c function rt_roundd_snf line 196 thread 3
+----------------------------------------------------
+  d=-1.187995e+14 (11000010 11011011 00000011 00001010 11111111 01101111 11111111 11100000)
+
+State 445 file brake_acc_nodiv_ctrl.c function rt_roundd_snf line 202 thread 3
+----------------------------------------------------
+  x=-1.187995e+14 (11000010 11011011 00000011 00001010 11111111 01110000 00000000 00000000)
+
+State 449 file <builtin-library-ceil> function ceil line 16 thread 3
+----------------------------------------------------
+  rounding_mode=0x800 (00000000 00000000 00001000 00000000)
+
+State 450 file <builtin-library-ceil> function ceil line 16 thread 3
+----------------------------------------------------
+  d=-1.187995e+14 (11000010 11011011 00000011 00001010 11111111 01110000 00000000 00000000)
+
+State 452 file <builtin-library-__sort_of_CPROVER_round_to_integral> function __sort_of_CPROVER_round_to_integral line 15 thread 3
+----------------------------------------------------
+  magicConst=4.503600e+15 (01000011 00110000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 453 file <builtin-library-__sort_of_CPROVER_round_to_integral> function __sort_of_CPROVER_round_to_integral line 16 thread 3
+----------------------------------------------------
+  return_value=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 461 file <builtin-library-__sort_of_CPROVER_round_to_integral> function __sort_of_CPROVER_round_to_integral line 17 thread 3
+----------------------------------------------------
+  saved_rounding_mode=0 (00000000 00000000 00000000 00000000)
+
+State 464 file <builtin-library-__sort_of_CPROVER_round_to_integral> function __sort_of_CPROVER_round_to_integral line 18 thread 3
+----------------------------------------------------
+  rounding_mode=0x800 (00000000 00000000 00001000 00000000)
+
+State 470 file <builtin-library-__sort_of_CPROVER_round_to_integral> function __sort_of_CPROVER_round_to_integral line 20 thread 3
+----------------------------------------------------
+  d=-1.187995e+14 (11000010 11011011 00000011 00001010 11111111 01110000 00000000 00000000)
+
+State 477 file <builtin-library-__sort_of_CPROVER_round_to_integral> function __sort_of_CPROVER_round_to_integral line 30 thread 3
+----------------------------------------------------
+  tmp=-4.622399e+15 (11000011 00110000 01101100 00001100 00101011 11111101 11000000 00000000)
+
+State 478 file <builtin-library-__sort_of_CPROVER_round_to_integral> function __sort_of_CPROVER_round_to_integral line 31 thread 3
+----------------------------------------------------
+  return_value=-1.187995e+14 (11000010 11011011 00000011 00001010 11111111 01110000 00000000 00000000)
+
+State 481 file <builtin-library-__sort_of_CPROVER_round_to_integral> function __sort_of_CPROVER_round_to_integral line 35 thread 3
+----------------------------------------------------
+  rounding_mode=0 (00000000 00000000 00000000 00000000)
+
+State 489 file brake_acc_nodiv_ctrl.c function rt_roundd_snf line 202 thread 3
+----------------------------------------------------
+  y=-1.187995e+14 (11000010 11011011 00000011 00001010 11111111 01110000 00000000 00000000)
+
+State 493 file brake_4.c function task_FR_Wheel line 472 thread 3
+----------------------------------------------------
+  rtb_to_int_k=-1.187995e+14 (11000010 11011011 00000011 00001010 11111111 01110000 00000000 00000000)
+
+State 495 file brake_4.c function task_compute line 206 thread 4
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local.RT_h=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 496 file brake_4.c function task_compute line 209 thread 4
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local.RT4=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 497 file brake_4.c function task_compute line 212 thread 4
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local.RT1=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 498 file brake_4.c function task_compute line 215 thread 4
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local.RT2=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 499 file brake_4.c function task_compute line 218 thread 4
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local.RT3=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 500 file brake_4.c function task_compute line 225 thread 4
+----------------------------------------------------
+  vkmh=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 501 file brake_4.c function task_compute line 226 thread 4
+----------------------------------------------------
+  Distribution_idx=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 502 file brake_4.c function task_compute line 227 thread 4
+----------------------------------------------------
+  Distribution_idx_0=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 503 file brake_4.c function task_compute line 228 thread 4
+----------------------------------------------------
+  Distribution_idx_1=0.0 (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 504 file brake_4.c function task_compute line 234 thread 4
+----------------------------------------------------
+  Distribution_idx=4.447517e-309 (00000000 00000011 00110010 10110111 00111101 10011101 00101111 01011101)
+
+State 505 file brake_4.c function task_compute line 236 thread 4
+----------------------------------------------------
+  Distribution_idx_0=3.220616e-309 (00000000 00000010 01010000 11011100 11110111 10100110 11001010 00000101)
+
+State 506 file brake_4.c function task_compute line 238 thread 4
+----------------------------------------------------
+  Distribution_idx_1=2.913891e-309 (00000000 00000010 00011000 01100110 01100110 00101001 00110000 10101111)
+
+State 507 file brake_4.c function task_compute line 250 thread 4
+----------------------------------------------------
+  vkmh=+NAN (01111111 11110000 00000000 00000000 00000000 00000000 00000000 00000001)
+
+State 509 file brake_4.c function task_compute line 258 thread 4
+----------------------------------------------------
+  tmp=+NAN (01111111 11110000 00000000 00000000 00000000 00000000 00000000 00000001)
+
+State 513 file brake_4.c function task_compute line 260 thread 4
+----------------------------------------------------
+  d=+NAN (01111111 11110000 00000000 00000000 00000000 00000000 00000000 00000001)
+
+Violated property:
+  file brake_4.c function task_compute line 260 thread 4
+  assertion fabs(vkmh-tmp)<=0.001
+  return_value_fabs <= 0.001
+
+
+
+** 1 of 1 failed (2 iterations)
+VERIFICATION FAILED

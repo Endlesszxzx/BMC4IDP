@@ -69,153 +69,157 @@ void closer1(void ) {
     closer2();
     __CPROVER_ASYNC_2:
     writer1();
+    while(cnt1<5) {
         tco_write_buf = 'V';
         do { if (1) { if (!nowayout) { tco_expect_close = 0; if (tco_write_buf == 'V') { tco_expect_close = 42; } } } do { do { tco1_rld = 0x01; } while (0); } while (0); } while (0);
         tco_expect_close = 42;
         cnt1++;
-    return NULL;
+    }
+    return 0;
 }
 void closer2(void) {
+    while(cnt2<5) {
         tco_write_buf = 'V';
         do { if (1) { if (!nowayout) { tco_expect_close = 0; if (tco_write_buf == 'V') { tco_expect_close = 42; } } } do { do { tco1_rld = 0x01; } while (0); } while (0); } while (0);
         tco_expect_close = 42;
         do { if (tco_expect_close != 42) { ((void) sizeof ((0) ? 1 : 0), __extension__ ({ if (0) ; else __assert_fail ("0", "i8xx_tco_2.c", 738, __extension__ __PRETTY_FUNCTION__); })); } else { } do { timer_alive = 0; } while (0); tco_expect_close = 0; } while (0);
         cnt2++;
-    return NULL;
+    }
+    return 0;
 }
 void writer1(void ) {
     __CPROVER_ASYNC_1:
     writer2();
+    while(cnt3<5) {
         do { if (0) { if (!nowayout) { tco_expect_close = 0; if (tco_write_buf == 'V') { tco_expect_close = 42; } } } do { do { tco1_rld = 0x01; } while (0); } while (0); } while (0);
         cnt3++;
-    return NULL;
+    }
+    return 0;
 }
 void writer2(void ) {
+    while(cnt4<5) {
         do { if (0) { if (!nowayout) { tco_expect_close = 0; if (tco_write_buf == 'V') { tco_expect_close = 42; } } } do { do { tco1_rld = 0x01; } while (0); } while (0); } while (0);
         cnt4++;
-    return NULL;
+    }
+    return 0;
 }
 void *writer3(void *unused) {
     while(1) {
         do { if (0) { if (!nowayout) { tco_expect_close = 0; if (tco_write_buf == 'V') { tco_expect_close = 42; } } } do { do { tco1_rld = 0x01; } while (0); } while (0); } while (0);
     }
-    return NULL;
+    return 0;
 }
 void *writer4(void *unused) {
     while(1) {
         do { if (0) { if (!nowayout) { tco_expect_close = 0; if (tco_write_buf == 'V') { tco_expect_close = 42; } } } do { do { tco1_rld = 0x01; } while (0); } while (0); } while (0);
     }
-    return NULL;
+    return 0;
 }
 void *writer5(void *unused) {
   do { if (0) { if (!nowayout) { tco_expect_close = 0; if (tco_write_buf == 'V') { tco_expect_close = 42; } } } do { do { tco1_rld = 0x01; } while (0); } while (0); } while (0);
-  return NULL;
+  return 0;
 }
 void *writer6(void *unused) {
   do { if (0) { if (!nowayout) { tco_expect_close = 0; if (tco_write_buf == 'V') { tco_expect_close = 42; } } } do { do { tco1_rld = 0x01; } while (0); } while (0); } while (0);
-  return NULL;
+  return 0;
 }
 void *writer7(void *unused) {
   do { if (0) { if (!nowayout) { tco_expect_close = 0; if (tco_write_buf == 'V') { tco_expect_close = 42; } } } do { do { tco1_rld = 0x01; } while (0); } while (0); } while (0);
-  return NULL;
+  return 0;
 }
 void *writer8(void *unused) {
   do { if (0) { if (!nowayout) { tco_expect_close = 0; if (tco_write_buf == 'V') { tco_expect_close = 42; } } } do { do { tco1_rld = 0x01; } while (0); } while (0); } while (0);
-  return NULL;
+  return 0;
 }
 void *writer9(void *unused) {
   do { if (0) { if (!nowayout) { tco_expect_close = 0; if (tco_write_buf == 'V') { tco_expect_close = 42; } } } do { do { tco1_rld = 0x01; } while (0); } while (0); } while (0);
-  return NULL;
+  return 0;
 }
 void *writer10(void *unused) {
   do { if (0) { if (!nowayout) { tco_expect_close = 0; if (tco_write_buf == 'V') { tco_expect_close = 42; } } } do { do { tco1_rld = 0x01; } while (0); } while (0); } while (0);
-  return NULL;
+  return 0;
 }
 void *writer11(void *unused) {
   do { if (0) { if (!nowayout) { tco_expect_close = 0; if (tco_write_buf == 'V') { tco_expect_close = 42; } } } do { do { tco1_rld = 0x01; } while (0); } while (0); } while (0);
-  return NULL;
+  return 0;
 }
 void *writer12(void *unused) {
   do { if (0) { if (!nowayout) { tco_expect_close = 0; if (tco_write_buf == 'V') { tco_expect_close = 42; } } } do { do { tco1_rld = 0x01; } while (0); } while (0); } while (0);
-  return NULL;
+  return 0;
 }
 void *writer13(void *unused) {
   do { if (0) { if (!nowayout) { tco_expect_close = 0; if (tco_write_buf == 'V') { tco_expect_close = 42; } } } do { do { tco1_rld = 0x01; } while (0); } while (0); } while (0);
-  return NULL;
+  return 0;
 }
 void *writer14(void *unused) {
   do { if (0) { if (!nowayout) { tco_expect_close = 0; if (tco_write_buf == 'V') { tco_expect_close = 42; } } } do { do { tco1_rld = 0x01; } while (0); } while (0); } while (0);
-  return NULL;
+  return 0;
 }
 void *writer15(void *unused) {
   do { if (0) { if (!nowayout) { tco_expect_close = 0; if (tco_write_buf == 'V') { tco_expect_close = 42; } } } do { do { tco1_rld = 0x01; } while (0); } while (0); } while (0);
-  return NULL;
+  return 0;
 }
 void *writer16(void *unused) {
   do { if (0) { if (!nowayout) { tco_expect_close = 0; if (tco_write_buf == 'V') { tco_expect_close = 42; } } } do { do { tco1_rld = 0x01; } while (0); } while (0); } while (0);
-  return NULL;
+  return 0;
 }
 void *writer17(void *unused) {
   do { if (0) { if (!nowayout) { tco_expect_close = 0; if (tco_write_buf == 'V') { tco_expect_close = 42; } } } do { do { tco1_rld = 0x01; } while (0); } while (0); } while (0);
-  return NULL;
+  return 0;
 }
 void *writer18(void *unused) {
   do { if (0) { if (!nowayout) { tco_expect_close = 0; if (tco_write_buf == 'V') { tco_expect_close = 42; } } } do { do { tco1_rld = 0x01; } while (0); } while (0); } while (0);
-  return NULL;
+  return 0;
 }
 void *writer19(void *unused) {
   do { if (0) { if (!nowayout) { tco_expect_close = 0; if (tco_write_buf == 'V') { tco_expect_close = 42; } } } do { do { tco1_rld = 0x01; } while (0); } while (0); } while (0);
-  return NULL;
+  return 0;
 }
 void *writer20(void *unused) {
   do { if (0) { if (!nowayout) { tco_expect_close = 0; if (tco_write_buf == 'V') { tco_expect_close = 42; } } } do { do { tco1_rld = 0x01; } while (0); } while (0); } while (0);
-  return NULL;
+  return 0;
 }
 void *writer21(void *unused) {
   do { if (0) { if (!nowayout) { tco_expect_close = 0; if (tco_write_buf == 'V') { tco_expect_close = 42; } } } do { do { tco1_rld = 0x01; } while (0); } while (0); } while (0);
-  return NULL;
+  return 0;
 }
 void *writer22(void *unused) {
   do { if (0) { if (!nowayout) { tco_expect_close = 0; if (tco_write_buf == 'V') { tco_expect_close = 42; } } } do { do { tco1_rld = 0x01; } while (0); } while (0); } while (0);
-  return NULL;
+  return 0;
 }
 void *writer23(void *unused) {
   do { if (0) { if (!nowayout) { tco_expect_close = 0; if (tco_write_buf == 'V') { tco_expect_close = 42; } } } do { do { tco1_rld = 0x01; } while (0); } while (0); } while (0);
-  return NULL;
+  return 0;
 }
 void *writer24(void *unused) {
   do { if (0) { if (!nowayout) { tco_expect_close = 0; if (tco_write_buf == 'V') { tco_expect_close = 42; } } } do { do { tco1_rld = 0x01; } while (0); } while (0); } while (0);
-  return NULL;
+  return 0;
 }
 void *writer25(void *unused) {
   do { if (0) { if (!nowayout) { tco_expect_close = 0; if (tco_write_buf == 'V') { tco_expect_close = 42; } } } do { do { tco1_rld = 0x01; } while (0); } while (0); } while (0);
-  return NULL;
+  return 0;
 }
 void *writer26(void *unused) {
   do { if (0) { if (!nowayout) { tco_expect_close = 0; if (tco_write_buf == 'V') { tco_expect_close = 42; } } } do { do { tco1_rld = 0x01; } while (0); } while (0); } while (0);
-  return NULL;
+  return 0;
 }
 void *writer27(void *unused) {
   do { if (0) { if (!nowayout) { tco_expect_close = 0; if (tco_write_buf == 'V') { tco_expect_close = 42; } } } do { do { tco1_rld = 0x01; } while (0); } while (0); } while (0);
-  return NULL;
+  return 0;
 }
 void *writer28(void *unused) {
   do { if (0) { if (!nowayout) { tco_expect_close = 0; if (tco_write_buf == 'V') { tco_expect_close = 42; } } } do { do { tco1_rld = 0x01; } while (0); } while (0); } while (0);
-  return NULL;
+  return 0;
 }
 void *writer29(void *unused) {
   do { if (0) { if (!nowayout) { tco_expect_close = 0; if (tco_write_buf == 'V') { tco_expect_close = 42; } } } do { do { tco1_rld = 0x01; } while (0); } while (0); } while (0);
-  return NULL;
+  return 0;
 }
 void *writer30(void *unused) {
   do { if (0) { if (!nowayout) { tco_expect_close = 0; if (tco_write_buf == 'V') { tco_expect_close = 42; } } } do { do { tco1_rld = 0x01; } while (0); } while (0); } while (0);
-  return NULL;
+  return 0;
 }
 int main(int argc, char *argv[]) {
-  tco_expect_close = 0;
-  pthread_t t1;
-  pthread_t t2;
     __CPROVER_ASYNC_1:
     closer1();
-  pthread_exit(NULL);
 }

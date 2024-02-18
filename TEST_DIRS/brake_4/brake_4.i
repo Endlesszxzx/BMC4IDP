@@ -351,7 +351,7 @@ void task_compute(void unused) {
     vkmh = vkmh + brake_acc_nodiv_ctrl_P_vkmh_Gain;
     test = 1;
     test2 = test + test2;
-    ((void) sizeof ((test2>=0&&test2<=3) ? 1 : 0), __extension__ ({ if (test2>=0&&test2<=3) ; else __assert_fail ("test2>=0&&test2<=3", "brake_w.c", 329, __extension__ __PRETTY_FUNCTION__); }));
+    ((void) sizeof ((test2>=0&&test2<=3) ? 1 : 0), __extension__ ({ if (test2>=0&&test2<=3) ; else __assert_fail ("test2>=0&&test2<=3", "brake_4.c", 329, __extension__ __PRETTY_FUNCTION__); }));
     RT_Buffer0 = brake_acc_nodiv_ctrl_P_Distribution_Gain0 + brake_acc_nodiv_ctrl_B_local_RT14;
     RT4_Buffer0 = vkmh;
     RT1_Buffer0 = Distribution_idx;
@@ -371,7 +371,7 @@ void task_RR_Wheel(void ) {
     brake_acc_nodiv_ctrl_B_local_RT_h = RT_Buffer0;
     brake_acc_nodiv_ctrl_B_local_RT4 = RT4_Buffer0;
  rtb_to_int = 10;
-    bool rtb_RelationalOperator;
+    int rtb_RelationalOperator;
     int rtb_vms;
     int u;
     rtb_vms = 10 + brake_acc_nodiv_ctrl_B_local_RT4;
@@ -389,9 +389,9 @@ void task_RR_Wheel(void ) {
     int tmp0 = 10;
     int tmp1 = 10 + rtb_vms;
     if (tmp0 > tmp1) {
-        rtb_RelationalOperator = true;
+        rtb_RelationalOperator = 1;
     } else {
-        rtb_RelationalOperator = false;
+        rtb_RelationalOperator = 0;
     }
     int Threshold_10kmh_Threshold_local = 100;
     if (brake_acc_nodiv_ctrl_B_local_RT4 >= Threshold_10kmh_Threshold_local) {
@@ -412,7 +412,7 @@ void task_FL_Wheel(void ) {
         cnt3++;
     test = 0;
     if (test != 0) {
-        ((void) sizeof ((0) ? 1 : 0), __extension__ ({ if (0) ; else __assert_fail ("0", "brake_w.c", 471, __extension__ __PRETTY_FUNCTION__); }));
+        ((void) sizeof ((0) ? 1 : 0), __extension__ ({ if (0) ; else __assert_fail ("0", "brake_4.c", 471, __extension__ __PRETTY_FUNCTION__); }));
     }
     brake_acc_nodiv_ctrl_B_local_RT_h = brake_acc_nodiv_ctrl_P_RT_X0;
     brake_acc_nodiv_ctrl_B_local_RT4 = brake_acc_nodiv_ctrl_P_RT4_X0;
@@ -423,7 +423,7 @@ void task_FL_Wheel(void ) {
     rtb_to_int1 = 10;
         brake_acc_nodiv_ctrl_B_local_RT_h = RT_Buffer0;
     brake_acc_nodiv_ctrl_B_local_RT4 = RT4_Buffer0;
-    bool rtb_RelationalOperator;
+    int rtb_RelationalOperator;
     int rtb_vms;
     int u;
     rtb_vms = 10 + brake_acc_nodiv_ctrl_B_local_RT4;
@@ -441,9 +441,9 @@ void task_FL_Wheel(void ) {
     int tmp0 = 10;
     int tmp1 = 10 + rtb_vms;
     if (tmp0 > tmp1) {
-        rtb_RelationalOperator = true;
+        rtb_RelationalOperator = 1;
     } else {
-        rtb_RelationalOperator = false;
+        rtb_RelationalOperator = 0;
     }
     int Threshold_10kmh_Threshold_local = 100;
     if (brake_acc_nodiv_ctrl_B_local_RT4 >= Threshold_10kmh_Threshold_local) {
@@ -480,7 +480,7 @@ void task_FR_Wheel(void )
         cnt4++;
     test = 0;
     if (test != 0) {
-        ((void) sizeof ((0) ? 1 : 0), __extension__ ({ if (0) ; else __assert_fail ("0", "brake_w.c", 607, __extension__ __PRETTY_FUNCTION__); }));
+        ((void) sizeof ((0) ? 1 : 0), __extension__ ({ if (0) ; else __assert_fail ("0", "brake_4.c", 607, __extension__ __PRETTY_FUNCTION__); }));
     }
     brake_acc_nodiv_ctrl_B_local_RT_h = brake_acc_nodiv_ctrl_P_RT_X0;
     brake_acc_nodiv_ctrl_B_local_RT4 = brake_acc_nodiv_ctrl_P_RT4_X0;
@@ -490,7 +490,7 @@ void task_FR_Wheel(void )
     int rtb_to_int_k;
     brake_acc_nodiv_ctrl_B_local_RT4 = RT4_Buffer0;
  rtb_to_int_k = 10;
-    bool rtb_RelationalOperator;
+    int rtb_RelationalOperator;
     int rtb_vms = 10 + brake_acc_nodiv_ctrl_B_local_RT4;
     int u = rtb_vms + 10;
     u = u + rtb_to_int_k;
@@ -506,9 +506,9 @@ void task_FR_Wheel(void )
     int tmp0 = 10;
     int tmp1 = 10 + rtb_vms;
     if (tmp0 > tmp1) {
-        rtb_RelationalOperator = true;
+        rtb_RelationalOperator = 1;
     } else {
-        rtb_RelationalOperator = false;
+        rtb_RelationalOperator = 0;
     }
     int Threshold_10kmh_Threshold_local = 100;
     if (brake_acc_nodiv_ctrl_B_local_RT4 >= Threshold_10kmh_Threshold_local) {
@@ -535,7 +535,7 @@ void *task_RL_Wheel(void *unused)
     brake_acc_nodiv_ctrl_B_local_RT_h = RT_Buffer0;
     brake_acc_nodiv_ctrl_B_local_RT4 = RT4_Buffer0;
  rtb_to_int_g = 10;
-    bool rtb_RelationalOperator;
+    int rtb_RelationalOperator;
     int rtb_vms;
     int u;
     rtb_vms = 10 + brake_acc_nodiv_ctrl_B_local_RT4;
@@ -553,9 +553,9 @@ void *task_RL_Wheel(void *unused)
     int tmp0 = 10;
     int tmp1 = 10 + rtb_vms;
     if (tmp0 > tmp1) {
-        rtb_RelationalOperator = true;
+        rtb_RelationalOperator = 1;
     } else {
-        rtb_RelationalOperator = false;
+        rtb_RelationalOperator = 0;
     }
     int Threshold_10kmh_Threshold_local = 100;
     if (brake_acc_nodiv_ctrl_B_local_RT4 >= Threshold_10kmh_Threshold_local) {

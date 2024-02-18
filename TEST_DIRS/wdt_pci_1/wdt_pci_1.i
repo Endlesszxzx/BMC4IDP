@@ -725,6 +725,7 @@ void closer2();
 void writer1();
 void writer2();
 void closer1(void ) {
+    while(cnt1 < 5) {
         wdtpci_write_buf = 'V';
         expect_close = 42;
         count = 1;
@@ -741,9 +742,11 @@ void closer1(void ) {
         }
         expect_close = 0;
         cnt1++;
+    }
     return ((void *)0);
 }
 void closer2(void ) {
+    while(cnt2 < 5) {
         wdtpci_write_buf = 'V';
         expect_close = 42;
         count = 1;
@@ -760,6 +763,7 @@ void closer2(void ) {
         }
         expect_close = 0;
         cnt2++;
+    }
     return ((void *)0);
 }
 void writer1(void ) {
@@ -767,6 +771,7 @@ void writer1(void ) {
     closer1();
     __CPROVER_ASYNC_2:
     closer2();
+    while (cnt3 < 5) {
         count = 0;
         expect_close = 0;
         if (count) {
@@ -777,9 +782,11 @@ void writer1(void ) {
             }
         }
         cnt3++;
+    }
     return ((void *)0);
 }
 void writer2(void ) {
+    while (cnt4 < 5) {
         count = 0;
         expect_close = 0;
         if (count) {
@@ -790,17 +797,18 @@ void writer2(void ) {
             }
         }
         cnt4++;
+    }
     return ((void *)0);
 }
 void *writer3(void *unused) {
-    while(cnt4 < 20) {
+    while(cnt4 < 5) {
         cnt4++;
         do { if (0) { if (!nowayout) { expect_close = 0; if (wdtpci_write_buf == 'V') { expect_close = 42; } } } } while (0);
     }
     return ((void *)0);
 }
 void *writer4(void *unused) {
-    while (cnt5 < 20) {
+    while (cnt5 < 5) {
         do { if (0) { if (!nowayout) { expect_close = 0; if (wdtpci_write_buf == 'V') { expect_close = 42; } } } } while (0);
         cnt5++;
     }
@@ -907,8 +915,6 @@ void *writer29(void *unused) {
   return ((void *)0);
 }
 int main(int argc, char *argv[]) {
-  pthread_t t1;
-  pthread_t t2;
     __CPROVER_ASYNC_1:
     writer1();
     __CPROVER_ASYNC_2:

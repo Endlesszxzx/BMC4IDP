@@ -1,0 +1,383 @@
+CBMC version 5.62.0 (ec1d828-dirty) 64-bit x86_64 linux
+Parsing wdt_pci_2.c
+Converting
+Type-checking wdt_pci_2
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+aborting path on assume(false) at file <builtin-library-pthread_exit> line 30 function pthread_exit thread 0
+Unwinding loop closer4.0 iteration 1 file wdt_pci_2.c line 1063 function closer4 thread 1
+Unwinding loop closer4.0 iteration 2 file wdt_pci_2.c line 1063 function closer4 thread 1
+Unwinding loop closer4.0 iteration 3 file wdt_pci_2.c line 1063 function closer4 thread 1
+Unwinding loop closer4.0 iteration 4 file wdt_pci_2.c line 1063 function closer4 thread 1
+Not unwinding loop closer4.0 iteration 5 file wdt_pci_2.c line 1063 function closer4 thread 1
+Unwinding loop closer1.0 iteration 1 file wdt_pci_2.c line 960 function closer1 thread 2
+Unwinding loop closer1.0 iteration 2 file wdt_pci_2.c line 960 function closer1 thread 2
+Unwinding loop closer1.0 iteration 3 file wdt_pci_2.c line 960 function closer1 thread 2
+Unwinding loop closer1.0 iteration 4 file wdt_pci_2.c line 960 function closer1 thread 2
+Not unwinding loop closer1.0 iteration 5 file wdt_pci_2.c line 960 function closer1 thread 2
+Unwinding loop closer2.0 iteration 1 file wdt_pci_2.c line 995 function closer2 thread 3
+Unwinding loop closer2.0 iteration 2 file wdt_pci_2.c line 995 function closer2 thread 3
+Unwinding loop closer2.0 iteration 3 file wdt_pci_2.c line 995 function closer2 thread 3
+Unwinding loop closer2.0 iteration 4 file wdt_pci_2.c line 995 function closer2 thread 3
+Not unwinding loop closer2.0 iteration 5 file wdt_pci_2.c line 995 function closer2 thread 3
+Unwinding loop closer3.0 iteration 1 file wdt_pci_2.c line 1028 function closer3 thread 4
+Unwinding loop closer3.0 iteration 2 file wdt_pci_2.c line 1028 function closer3 thread 4
+Unwinding loop closer3.0 iteration 3 file wdt_pci_2.c line 1028 function closer3 thread 4
+Unwinding loop closer3.0 iteration 4 file wdt_pci_2.c line 1028 function closer3 thread 4
+Not unwinding loop closer3.0 iteration 5 file wdt_pci_2.c line 1028 function closer3 thread 4
+Runtime Symex: 0.0414763s
+Adding constraints
+using sc expand memory model
+start to make constraint
+132
+success make constraint
+--------------------log constraint nums:------------------
+fr : 70261
+fr-begin : 1500
+fr-end : 1500
+nested-isr : 368
+po : 274
+rf : 1620
+rf-begin : 1620
+rf-end : 1620
+rf-order : 1620
+rf-some : 121
+rfi : 361
+spawn-before-fr-false : 1860
+spawn-before-ws : 120
+thread-spawn : 243
+ws-begin : 1770
+ws-end : 1770
+ws-ext : 3300
+constraints sum : 89928
+spawn_relaxing_cons_nums: 76004
+size of program expression: 90648 steps
+no slicing due to threads
+Generated 10 VCC(s), 10 remaining after simplification
+Runtime Postprocess Equation: 6.28506s
+Passing problem to propositional reduction
+converting SSA
+Runtime Convert SSA: 2.87595s
+Running propositional reduction
+Post-processing
+Runtime Post-process: 0.00115013s
+Solving with MiniSAT 2.2.1 with simplifier
+269589 variables, 1627739 clauses
+decisions: 247254
+propagations: 60974598
+conflicts: 35859
+SAT checker: instance is SATISFIABLE
+Runtime Solver: 40.9843s
+Runtime decision procedure: 43.8679s
+Building error trace
+Running propositional reduction
+Solving with MiniSAT 2.2.1 with simplifier
+269589 variables, 885909 clauses
+decisions: 672375
+propagations: 196192565
+conflicts: 83776
+SAT checker: instance is UNSATISFIABLE
+Runtime Solver: 68.7521s
+Runtime decision procedure: 68.7522s
+
+** Results:
+wdt_pci_2.c function closer3
+[closer3.assertion.1] line 1047 assertion 0: SUCCESS
+
+wdt_pci_2.c function closer4
+[closer4.assertion.1] line 1082 assertion 0: FAILURE
+
+Trace for closer4.assertion.1:
+
+Assumption:
+  argc' >= 0
+
+State 42 function __CPROVER__start thread 0
+----------------------------------------------------
+  INPUT argc: 1 (00000000 00000000 00000000 00000001)
+
+State 46 file wdt_pci_2.c function __CPROVER__start line 1305 thread 0
+----------------------------------------------------
+  argc=1 (00000000 00000000 00000000 00000001)
+
+State 47 file wdt_pci_2.c function __CPROVER__start line 1305 thread 0
+----------------------------------------------------
+  argv=argv' (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 48 file wdt_pci_2.c function main line 1307 thread 0
+----------------------------------------------------
+  t1=0ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 49 file wdt_pci_2.c function main line 1308 thread 0
+----------------------------------------------------
+  t2=0ul (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 62 file wdt_pci_2.c function main line 1354 thread 0
+----------------------------------------------------
+  value_ptr=NULL (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 65 file wdt_pci_2.c function closer4 line 1064 thread 1
+----------------------------------------------------
+  wdtpci_write_buf='V' (01010110)
+
+State 66 file wdt_pci_2.c function closer4 line 1065 thread 1
+----------------------------------------------------
+  expect_close=42 (00000000 00000000 00000000 00101010)
+
+State 67 file wdt_pci_2.c function closer4 line 1066 thread 1
+----------------------------------------------------
+  count=1 (00000000 00000000 00000000 00000001)
+
+State 72 file wdt_pci_2.c function closer4 line 1086 thread 1
+----------------------------------------------------
+  expect_close=0 (00000000 00000000 00000000 00000000)
+
+State 73 file wdt_pci_2.c function closer4 line 1088 thread 1
+----------------------------------------------------
+  cnt8=1 (00000000 00000000 00000000 00000001)
+
+State 76 file wdt_pci_2.c function closer4 line 1064 thread 1
+----------------------------------------------------
+  wdtpci_write_buf='V' (01010110)
+
+State 77 file wdt_pci_2.c function closer4 line 1065 thread 1
+----------------------------------------------------
+  expect_close=42 (00000000 00000000 00000000 00101010)
+
+State 78 file wdt_pci_2.c function closer4 line 1066 thread 1
+----------------------------------------------------
+  count=1 (00000000 00000000 00000000 00000001)
+
+State 83 file wdt_pci_2.c function closer4 line 1086 thread 1
+----------------------------------------------------
+  expect_close=0 (00000000 00000000 00000000 00000000)
+
+State 84 file wdt_pci_2.c function closer4 line 1088 thread 1
+----------------------------------------------------
+  cnt8=2 (00000000 00000000 00000000 00000010)
+
+State 87 file wdt_pci_2.c function closer4 line 1064 thread 1
+----------------------------------------------------
+  wdtpci_write_buf='V' (01010110)
+
+State 88 file wdt_pci_2.c function closer4 line 1065 thread 1
+----------------------------------------------------
+  expect_close=42 (00000000 00000000 00000000 00101010)
+
+State 89 file wdt_pci_2.c function closer4 line 1066 thread 1
+----------------------------------------------------
+  count=1 (00000000 00000000 00000000 00000001)
+
+State 93 file wdt_pci_2.c function closer1 line 961 thread 2
+----------------------------------------------------
+  wdtpci_write_buf='V' (01010110)
+
+State 94 file wdt_pci_2.c function closer1 line 962 thread 2
+----------------------------------------------------
+  expect_close=42 (00000000 00000000 00000000 00101010)
+
+State 95 file wdt_pci_2.c function closer1 line 963 thread 2
+----------------------------------------------------
+  count=1 (00000000 00000000 00000000 00000001)
+
+State 100 file wdt_pci_2.c function closer1 line 984 thread 2
+----------------------------------------------------
+  expect_close=0 (00000000 00000000 00000000 00000000)
+
+State 101 file wdt_pci_2.c function closer1 line 986 thread 2
+----------------------------------------------------
+  cnt1=1 (00000000 00000000 00000000 00000001)
+
+State 104 file wdt_pci_2.c function closer1 line 961 thread 2
+----------------------------------------------------
+  wdtpci_write_buf='V' (01010110)
+
+State 105 file wdt_pci_2.c function closer1 line 962 thread 2
+----------------------------------------------------
+  expect_close=42 (00000000 00000000 00000000 00101010)
+
+State 106 file wdt_pci_2.c function closer1 line 963 thread 2
+----------------------------------------------------
+  count=1 (00000000 00000000 00000000 00000001)
+
+State 111 file wdt_pci_2.c function closer1 line 984 thread 2
+----------------------------------------------------
+  expect_close=0 (00000000 00000000 00000000 00000000)
+
+State 112 file wdt_pci_2.c function closer1 line 986 thread 2
+----------------------------------------------------
+  cnt1=2 (00000000 00000000 00000000 00000010)
+
+State 115 file wdt_pci_2.c function closer1 line 961 thread 2
+----------------------------------------------------
+  wdtpci_write_buf='V' (01010110)
+
+State 116 file wdt_pci_2.c function closer1 line 962 thread 2
+----------------------------------------------------
+  expect_close=42 (00000000 00000000 00000000 00101010)
+
+State 117 file wdt_pci_2.c function closer1 line 963 thread 2
+----------------------------------------------------
+  count=1 (00000000 00000000 00000000 00000001)
+
+State 122 file wdt_pci_2.c function closer1 line 984 thread 2
+----------------------------------------------------
+  expect_close=0 (00000000 00000000 00000000 00000000)
+
+State 123 file wdt_pci_2.c function closer1 line 986 thread 2
+----------------------------------------------------
+  cnt1=3 (00000000 00000000 00000000 00000011)
+
+State 126 file wdt_pci_2.c function closer1 line 961 thread 2
+----------------------------------------------------
+  wdtpci_write_buf='V' (01010110)
+
+State 127 file wdt_pci_2.c function closer1 line 962 thread 2
+----------------------------------------------------
+  expect_close=42 (00000000 00000000 00000000 00101010)
+
+State 128 file wdt_pci_2.c function closer1 line 963 thread 2
+----------------------------------------------------
+  count=1 (00000000 00000000 00000000 00000001)
+
+State 133 file wdt_pci_2.c function closer1 line 984 thread 2
+----------------------------------------------------
+  expect_close=0 (00000000 00000000 00000000 00000000)
+
+State 134 file wdt_pci_2.c function closer1 line 986 thread 2
+----------------------------------------------------
+  cnt1=4 (00000000 00000000 00000000 00000100)
+
+State 137 file wdt_pci_2.c function closer1 line 961 thread 2
+----------------------------------------------------
+  wdtpci_write_buf='V' (01010110)
+
+State 138 file wdt_pci_2.c function closer1 line 962 thread 2
+----------------------------------------------------
+  expect_close=42 (00000000 00000000 00000000 00101010)
+
+State 139 file wdt_pci_2.c function closer1 line 963 thread 2
+----------------------------------------------------
+  count=1 (00000000 00000000 00000000 00000001)
+
+State 144 file wdt_pci_2.c function closer1 line 984 thread 2
+----------------------------------------------------
+  expect_close=0 (00000000 00000000 00000000 00000000)
+
+State 145 file wdt_pci_2.c function closer1 line 986 thread 2
+----------------------------------------------------
+  cnt1=5 (00000000 00000000 00000000 00000101)
+
+State 157 file wdt_pci_2.c function closer2 line 996 thread 3
+----------------------------------------------------
+  wdtpci_write_buf='V' (01010110)
+
+State 158 file wdt_pci_2.c function closer2 line 997 thread 3
+----------------------------------------------------
+  expect_close=42 (00000000 00000000 00000000 00101010)
+
+State 159 file wdt_pci_2.c function closer2 line 998 thread 3
+----------------------------------------------------
+  count=1 (00000000 00000000 00000000 00000001)
+
+State 164 file wdt_pci_2.c function closer2 line 1019 thread 3
+----------------------------------------------------
+  expect_close=0 (00000000 00000000 00000000 00000000)
+
+State 165 file wdt_pci_2.c function closer2 line 1021 thread 3
+----------------------------------------------------
+  cnt2=1 (00000000 00000000 00000000 00000001)
+
+State 168 file wdt_pci_2.c function closer2 line 996 thread 3
+----------------------------------------------------
+  wdtpci_write_buf='V' (01010110)
+
+State 169 file wdt_pci_2.c function closer2 line 997 thread 3
+----------------------------------------------------
+  expect_close=42 (00000000 00000000 00000000 00101010)
+
+State 170 file wdt_pci_2.c function closer2 line 998 thread 3
+----------------------------------------------------
+  count=1 (00000000 00000000 00000000 00000001)
+
+State 175 file wdt_pci_2.c function closer2 line 1019 thread 3
+----------------------------------------------------
+  expect_close=0 (00000000 00000000 00000000 00000000)
+
+State 176 file wdt_pci_2.c function closer2 line 1021 thread 3
+----------------------------------------------------
+  cnt2=2 (00000000 00000000 00000000 00000010)
+
+State 179 file wdt_pci_2.c function closer2 line 996 thread 3
+----------------------------------------------------
+  wdtpci_write_buf='V' (01010110)
+
+State 180 file wdt_pci_2.c function closer2 line 997 thread 3
+----------------------------------------------------
+  expect_close=42 (00000000 00000000 00000000 00101010)
+
+State 181 file wdt_pci_2.c function closer2 line 998 thread 3
+----------------------------------------------------
+  count=1 (00000000 00000000 00000000 00000001)
+
+State 186 file wdt_pci_2.c function closer2 line 1019 thread 3
+----------------------------------------------------
+  expect_close=0 (00000000 00000000 00000000 00000000)
+
+State 187 file wdt_pci_2.c function closer2 line 1021 thread 3
+----------------------------------------------------
+  cnt2=3 (00000000 00000000 00000000 00000011)
+
+State 190 file wdt_pci_2.c function closer2 line 996 thread 3
+----------------------------------------------------
+  wdtpci_write_buf='V' (01010110)
+
+State 191 file wdt_pci_2.c function closer2 line 997 thread 3
+----------------------------------------------------
+  expect_close=42 (00000000 00000000 00000000 00101010)
+
+State 192 file wdt_pci_2.c function closer2 line 998 thread 3
+----------------------------------------------------
+  count=1 (00000000 00000000 00000000 00000001)
+
+State 197 file wdt_pci_2.c function closer2 line 1019 thread 3
+----------------------------------------------------
+  expect_close=0 (00000000 00000000 00000000 00000000)
+
+State 198 file wdt_pci_2.c function closer2 line 1021 thread 3
+----------------------------------------------------
+  cnt2=4 (00000000 00000000 00000000 00000100)
+
+State 201 file wdt_pci_2.c function closer2 line 996 thread 3
+----------------------------------------------------
+  wdtpci_write_buf='V' (01010110)
+
+State 202 file wdt_pci_2.c function closer2 line 997 thread 3
+----------------------------------------------------
+  expect_close=42 (00000000 00000000 00000000 00101010)
+
+State 203 file wdt_pci_2.c function closer2 line 998 thread 3
+----------------------------------------------------
+  count=1 (00000000 00000000 00000000 00000001)
+
+State 208 file wdt_pci_2.c function closer2 line 1019 thread 3
+----------------------------------------------------
+  expect_close=0 (00000000 00000000 00000000 00000000)
+
+State 209 file wdt_pci_2.c function closer2 line 1021 thread 3
+----------------------------------------------------
+  cnt2=5 (00000000 00000000 00000000 00000101)
+
+Violated property:
+  file wdt_pci_2.c function closer4 line 1082 thread 1
+  assertion 0
+  0 != 0
+
+
+
+** 1 of 2 failed (2 iterations)
+VERIFICATION FAILED

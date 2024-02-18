@@ -288,29 +288,37 @@ void req3();
 void req4();
 int cnt1, cnt2, cnt3, cnt4, cnt5, cnt6;
 void req1(void ) {
+    while(cnt1< 5) {
         irq = 1;
         { global_id = 1; global_dev = 1; };
         if (global_dev != 1) { ((void) sizeof ((0) ? 1 : 0), __extension__ ({ if (0) ; else __assert_fail ("0", "i2c_pca_isa_1.c", 281, __extension__ __PRETTY_FUNCTION__); })); } if (irq > -1) { if (global_id != 1) { ((void) sizeof ((0) ? 1 : 0), __extension__ ({ if (0) ; else __assert_fail ("0", "i2c_pca_isa_1.c", 281, __extension__ __PRETTY_FUNCTION__); })); } };
         { global_id = -1; global_dev = -1; };
         cnt1++;
+    }
 }
 void req2(void) {
+    while(cnt2 < 5) {
         irq = 2;
         { global_id = 2; global_dev = 2; };
         if (global_dev != 2) { ((void) sizeof ((0) ? 1 : 0), __extension__ ({ if (0) ; else __assert_fail ("0", "i2c_pca_isa_1.c", 291, __extension__ __PRETTY_FUNCTION__); })); } if (irq > -1) { if (global_id != 2) { ((void) sizeof ((0) ? 1 : 0), __extension__ ({ if (0) ; else __assert_fail ("0", "i2c_pca_isa_1.c", 291, __extension__ __PRETTY_FUNCTION__); })); } };
         { global_id = -1; global_dev = -1; };
         cnt2++;
+    }
 }
 void req3(void) {
+    while(cnt3 < 5) {
         irq = 3;
         { global_id = 3; global_dev = 3; };
         if (global_dev != 3) { ((void) sizeof ((0) ? 1 : 0), __extension__ ({ if (0) ; else __assert_fail ("0", "i2c_pca_isa_1.c", 301, __extension__ __PRETTY_FUNCTION__); })); } if (irq > -1) { if (global_id != 3) { ((void) sizeof ((0) ? 1 : 0), __extension__ ({ if (0) ; else __assert_fail ("0", "i2c_pca_isa_1.c", 301, __extension__ __PRETTY_FUNCTION__); })); } };
         { global_id = -1; global_dev = -1; };
         cnt3++;
+    }
 }
 void req4(void) {
+    while(cnt4 < 5) {
         irq = -1;
         cnt4++;
+    }
 }
 int main(void)
 {

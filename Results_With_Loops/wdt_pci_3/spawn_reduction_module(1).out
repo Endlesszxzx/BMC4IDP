@@ -1,0 +1,74 @@
+CBMC version 5.62.0 (ec1d828-dirty) 64-bit x86_64 linux
+Parsing wdt_pci_3.c
+Converting
+Type-checking wdt_pci_3
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Unwinding loop writer1.0 iteration 1 file wdt_pci_3.c line 1024 function writer1 thread 1
+Unwinding loop writer1.0 iteration 2 file wdt_pci_3.c line 1024 function writer1 thread 1
+Not unwinding loop writer1.0 iteration 3 file wdt_pci_3.c line 1024 function writer1 thread 1
+Unwinding loop writer2.0 iteration 1 file wdt_pci_3.c line 1046 function writer2 thread 2
+Unwinding loop writer2.0 iteration 2 file wdt_pci_3.c line 1046 function writer2 thread 2
+Not unwinding loop writer2.0 iteration 3 file wdt_pci_3.c line 1046 function writer2 thread 2
+Runtime Symex: 0.0205912s
+Adding constraints
+using sc expand memory model
+ssa num:264
+start to make constraint
+64
+success make constraint
+--------------------log constraint nums:------------------
+fr : 300
+fr-begin : 34
+fr-end : 34
+nested-isr : 37
+po : 99
+rf : 68
+rf-begin : 68
+rf-end : 68
+rf-order : 68
+rf-some : 34
+rfi : 27
+spawn-before-fr-false : 57
+spawn-before-ws : 32
+thread-spawn : 67
+ws-begin : 91
+ws-end : 91
+ws-ext : 118
+constraints sum : 1293
+spawn_relaxing_cons_nums: 607
+size of program expression: 1557 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Runtime Postprocess Equation: 0.0700703s
+Passing problem to propositional reduction
+converting SSA
+Runtime Convert SSA: 0.104796s
+Running propositional reduction
+Post-processing
+Runtime Post-process: 0.00101778s
+Solving with MiniSAT 2.2.1 with simplifier
+13532 variables, 57601 clauses
+decisions: 1725
+propagations: 212407
+conflicts: 558
+SAT checker: instance is UNSATISFIABLE
+Runtime Solver: 0.383415s
+Runtime decision procedure: 0.488456s
+
+** Results:
+wdt_pci_3.c function closer1
+[closer1.assertion.1] line 973 assertion 0: SUCCESS
+
+wdt_pci_3.c function closer2
+[closer2.assertion.1] line 1005 assertion 0: SUCCESS
+
+wdt_pci_3.c function writer1
+[writer1.assertion.1] line 1022 assertion y>=0&&y<=3: SUCCESS
+
+** 0 of 3 failed (1 iterations)
+VERIFICATION SUCCESSFUL

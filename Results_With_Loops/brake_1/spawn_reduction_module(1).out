@@ -1,0 +1,300 @@
+CBMC version 5.62.0 (ec1d828-dirty) 64-bit x86_64 linux
+Parsing brake_1.c
+Converting
+Type-checking brake_1
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Unwinding loop task_compute.0 iteration 1 file brake_1.c line 271 function task_compute thread 1
+Unwinding loop task_compute.0 iteration 2 file brake_1.c line 271 function task_compute thread 1
+Not unwinding loop task_compute.0 iteration 3 file brake_1.c line 271 function task_compute thread 1
+Unwinding loop task_RR_Wheel.0 iteration 1 file brake_1.c line 360 function task_RR_Wheel thread 2
+Unwinding loop task_RR_Wheel.0 iteration 2 file brake_1.c line 360 function task_RR_Wheel thread 2
+Not unwinding loop task_RR_Wheel.0 iteration 3 file brake_1.c line 360 function task_RR_Wheel thread 2
+Runtime Symex: 0.0413894s
+Adding constraints
+using sc expand memory model
+ssa num:692
+start to make constraint
+130
+success make constraint
+--------------------log constraint nums:------------------
+fr : 3645
+fr-begin : 120
+fr-end : 120
+nested-isr : 178
+po : 327
+rf : 267
+rf-begin : 267
+rf-end : 267
+rf-order : 267
+rf-some : 147
+rfi : 276
+spawn-before-fr-false : 384
+spawn-before-ws : 114
+thread-spawn : 262
+ws-begin : 228
+ws-end : 228
+ws-ext : 228
+constraints sum : 7325
+spawn_relaxing_cons_nums: 4930
+size of program expression: 8017 steps
+no slicing due to threads
+Generated 3 VCC(s), 3 remaining after simplification
+Runtime Postprocess Equation: 0.381903s
+Passing problem to propositional reduction
+converting SSA
+Runtime Convert SSA: 0.4636s
+Running propositional reduction
+Post-processing
+Runtime Post-process: 0.000197361s
+Solving with MiniSAT 2.2.1 with simplifier
+73191 variables, 330812 clauses
+decisions: 172311
+propagations: 10736148
+conflicts: 25494
+SAT checker: instance is SATISFIABLE
+Runtime Solver: 6.08228s
+Runtime decision procedure: 6.54632s
+Building error trace
+
+** Results:
+brake_1.c function task_FL_Wheel
+[task_FL_Wheel.assertion.1] line 471 assertion 0: SUCCESS
+
+brake_1.c function task_FR_Wheel
+[task_FR_Wheel.assertion.1] line 607 assertion 0: SUCCESS
+
+brake_1.c function task_compute
+[task_compute.assertion.1] line 329 assertion test2>=0&&test2<=3: FAILURE
+
+Trace for task_compute.assertion.1:
+
+State 33 file brake_1.c function __CPROVER_initialize line 160 thread 0
+----------------------------------------------------
+  __VERIFIER_thread_priorities[0l]=5 (00000000 00000000 00000000 00000101)
+
+State 34 file brake_1.c function __CPROVER_initialize line 160 thread 0
+----------------------------------------------------
+  __VERIFIER_thread_priorities[1l]=5 (00000000 00000000 00000000 00000101)
+
+State 35 file brake_1.c function __CPROVER_initialize line 160 thread 0
+----------------------------------------------------
+  __VERIFIER_thread_priorities[2l]=5 (00000000 00000000 00000000 00000101)
+
+State 36 file brake_1.c function __CPROVER_initialize line 160 thread 0
+----------------------------------------------------
+  __VERIFIER_thread_priorities[3l]=5 (00000000 00000000 00000000 00000101)
+
+State 37 file brake_1.c function __CPROVER_initialize line 160 thread 0
+----------------------------------------------------
+  __VERIFIER_thread_priorities[4l]=22 (00000000 00000000 00000000 00010110)
+
+State 39 file brake_1.c function __CPROVER_initialize line 161 thread 0
+----------------------------------------------------
+  __VERIFIER_threads[0l]="c::task_RR_Wheel" (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 40 file brake_1.c function __CPROVER_initialize line 161 thread 0
+----------------------------------------------------
+  __VERIFIER_threads[1l]="c::task_FR_Wheel" (00000011 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 41 file brake_1.c function __CPROVER_initialize line 161 thread 0
+----------------------------------------------------
+  __VERIFIER_threads[2l]="c::task_FL_Wheel" (00000100 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 42 file brake_1.c function __CPROVER_initialize line 161 thread 0
+----------------------------------------------------
+  __VERIFIER_threads[3l]="c::task_RL_Wheel" (00000101 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 43 file brake_1.c function __CPROVER_initialize line 161 thread 0
+----------------------------------------------------
+  __VERIFIER_threads[4l]="c::task_compute" (00000110 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 84 file brake_1.c function main line 819 thread 0
+----------------------------------------------------
+  test=0 (00000000 00000000 00000000 00000000)
+
+State 85 file brake_1.c function main line 820 thread 0
+----------------------------------------------------
+  test2=2 (00000000 00000000 00000000 00000010)
+
+State 89 file brake_1.c function __CPROVER__start line 813 thread 0
+----------------------------------------------------
+  OUTPUT return': 0 (00000000 00000000 00000000 00000000)
+
+State 100 file brake_1.c function task_compute line 272 thread 1
+----------------------------------------------------
+  cnt1=1 (00000000 00000000 00000000 00000001)
+
+State 101 file brake_1.c function task_compute line 276 thread 1
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local_RT_h=0 (00000000 00000000 00000000 00000000)
+
+State 102 file brake_1.c function task_compute line 279 thread 1
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local_RT4=0 (00000000 00000000 00000000 00000000)
+
+State 103 file brake_1.c function task_compute line 282 thread 1
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local_RT1=0 (00000000 00000000 00000000 00000000)
+
+State 104 file brake_1.c function task_compute line 285 thread 1
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local_RT2=0 (00000000 00000000 00000000 00000000)
+
+State 105 file brake_1.c function task_compute line 288 thread 1
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local_RT3=0 (00000000 00000000 00000000 00000000)
+
+State 106 file brake_1.c function task_compute line 291 thread 1
+----------------------------------------------------
+  test=0 (00000000 00000000 00000000 00000000)
+
+State 107 file brake_1.c function task_compute line 299 thread 1
+----------------------------------------------------
+  Distribution_idx=0 (00000000 00000000 00000000 00000000)
+
+State 108 file brake_1.c function task_compute line 301 thread 1
+----------------------------------------------------
+  Distribution_idx_0=0 (00000000 00000000 00000000 00000000)
+
+State 109 file brake_1.c function task_compute line 303 thread 1
+----------------------------------------------------
+  Distribution_idx_1=0 (00000000 00000000 00000000 00000000)
+
+State 110 file brake_1.c function task_compute line 318 thread 1
+----------------------------------------------------
+  vkmh=0 (00000000 00000000 00000000 00000000)
+
+State 111 file brake_1.c function task_compute line 319 thread 1
+----------------------------------------------------
+  vkmh=0 (00000000 00000000 00000000 00000000)
+
+State 112 file brake_1.c function task_compute line 320 thread 1
+----------------------------------------------------
+  vkmh=0 (00000000 00000000 00000000 00000000)
+
+State 113 file brake_1.c function task_compute line 321 thread 1
+----------------------------------------------------
+  vkmh=0 (00000000 00000000 00000000 00000000)
+
+State 114 file brake_1.c function task_compute line 322 thread 1
+----------------------------------------------------
+  vkmh=0 (00000000 00000000 00000000 00000000)
+
+State 115 file brake_1.c function task_compute line 323 thread 1
+----------------------------------------------------
+  vkmh=0 (00000000 00000000 00000000 00000000)
+
+State 116 file brake_1.c function task_compute line 326 thread 1
+----------------------------------------------------
+  test=1 (00000000 00000000 00000000 00000001)
+
+State 117 file brake_1.c function task_compute line 328 thread 1
+----------------------------------------------------
+  test2=3 (00000000 00000000 00000000 00000011)
+
+State 119 file brake_1.c function task_compute line 341 thread 1
+----------------------------------------------------
+  RT_Buffer0=0 (00000000 00000000 00000000 00000000)
+
+State 120 file brake_1.c function task_compute line 344 thread 1
+----------------------------------------------------
+  RT4_Buffer0=0 (00000000 00000000 00000000 00000000)
+
+State 121 file brake_1.c function task_compute line 347 thread 1
+----------------------------------------------------
+  RT1_Buffer0=0 (00000000 00000000 00000000 00000000)
+
+State 122 file brake_1.c function task_compute line 350 thread 1
+----------------------------------------------------
+  RT2_Buffer0=0 (00000000 00000000 00000000 00000000)
+
+State 123 file brake_1.c function task_compute line 353 thread 1
+----------------------------------------------------
+  RT3_Buffer0=0 (00000000 00000000 00000000 00000000)
+
+State 126 file brake_1.c function task_compute line 272 thread 1
+----------------------------------------------------
+  cnt1=2 (00000000 00000000 00000000 00000010)
+
+State 127 file brake_1.c function task_compute line 276 thread 1
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local_RT_h=0 (00000000 00000000 00000000 00000000)
+
+State 128 file brake_1.c function task_compute line 279 thread 1
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local_RT4=0 (00000000 00000000 00000000 00000000)
+
+State 129 file brake_1.c function task_compute line 282 thread 1
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local_RT1=0 (00000000 00000000 00000000 00000000)
+
+State 130 file brake_1.c function task_compute line 285 thread 1
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local_RT2=0 (00000000 00000000 00000000 00000000)
+
+State 131 file brake_1.c function task_compute line 288 thread 1
+----------------------------------------------------
+  brake_acc_nodiv_ctrl_B_local_RT3=0 (00000000 00000000 00000000 00000000)
+
+State 132 file brake_1.c function task_compute line 291 thread 1
+----------------------------------------------------
+  test=0 (00000000 00000000 00000000 00000000)
+
+State 133 file brake_1.c function task_compute line 299 thread 1
+----------------------------------------------------
+  Distribution_idx=0 (00000000 00000000 00000000 00000000)
+
+State 134 file brake_1.c function task_compute line 301 thread 1
+----------------------------------------------------
+  Distribution_idx_0=0 (00000000 00000000 00000000 00000000)
+
+State 135 file brake_1.c function task_compute line 303 thread 1
+----------------------------------------------------
+  Distribution_idx_1=0 (00000000 00000000 00000000 00000000)
+
+State 136 file brake_1.c function task_compute line 318 thread 1
+----------------------------------------------------
+  vkmh=0 (00000000 00000000 00000000 00000000)
+
+State 137 file brake_1.c function task_compute line 319 thread 1
+----------------------------------------------------
+  vkmh=0 (00000000 00000000 00000000 00000000)
+
+State 138 file brake_1.c function task_compute line 320 thread 1
+----------------------------------------------------
+  vkmh=0 (00000000 00000000 00000000 00000000)
+
+State 139 file brake_1.c function task_compute line 321 thread 1
+----------------------------------------------------
+  vkmh=0 (00000000 00000000 00000000 00000000)
+
+State 140 file brake_1.c function task_compute line 322 thread 1
+----------------------------------------------------
+  vkmh=0 (00000000 00000000 00000000 00000000)
+
+State 141 file brake_1.c function task_compute line 323 thread 1
+----------------------------------------------------
+  vkmh=0 (00000000 00000000 00000000 00000000)
+
+State 142 file brake_1.c function task_compute line 326 thread 1
+----------------------------------------------------
+  test=1 (00000000 00000000 00000000 00000001)
+
+State 143 file brake_1.c function task_compute line 328 thread 1
+----------------------------------------------------
+  test2=4 (00000000 00000000 00000000 00000100)
+
+Violated property:
+  file brake_1.c function task_compute line 329 thread 1
+  assertion test2>=0&&test2<=3
+  test2 >= 0 && test2 <= 3
+
+
+
+** 1 of 3 failed (2 iterations)
+VERIFICATION FAILED

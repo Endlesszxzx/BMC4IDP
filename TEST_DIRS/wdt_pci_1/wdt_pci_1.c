@@ -940,7 +940,7 @@ MODULE_ALIAS_MISCDEV(WATCHDOG_MINOR);
 MODULE_ALIAS_MISCDEV(TEMP_MINOR);
 #endif
 
-#define LIMIT 20
+#define LIMIT 5
 int cnt1, cnt2, cnt3, cnt4, cnt5;
 int count;
 int buf;
@@ -951,7 +951,7 @@ void writer2();
 
 void closer1(void ) {
 
-    //while(cnt1 < LIMIT) {
+    while(cnt1 < LIMIT) {
         wdtpci_write_buf = 'V';
         expect_close = 42;
         count = 1;
@@ -978,13 +978,13 @@ void closer1(void ) {
         expect_close = 0;
         //up(open_sem);
         cnt1++;
-    //}
+    }
     return NULL;
 }
 
 void closer2(void ) {
 
-    //while(cnt2 < LIMIT) {
+    while(cnt2 < LIMIT) {
         wdtpci_write_buf = 'V';
         expect_close = 42;
         count = 1;
@@ -1011,7 +1011,7 @@ void closer2(void ) {
         expect_close = 0;
         //up(open_sem);
         cnt2++;
-    //}
+    }
     return NULL;
 }
 
@@ -1021,7 +1021,7 @@ void writer1(void ) {
     closer1(); 
     __CPROVER_ASYNC_2:
     closer2(); 
-    //while (cnt3 < LIMIT) {
+    while (cnt3 < LIMIT) {
         count = 0;
         expect_close = 0;
         // function inline 
@@ -1037,13 +1037,13 @@ void writer1(void ) {
             } 
         } 
         cnt3++;
-    //}
+    }
     return NULL;
 }
 
 void writer2(void ) {
 
-    //while (cnt4 < LIMIT) {
+    while (cnt4 < LIMIT) {
         count = 0;
         expect_close = 0;
         // function inline 
@@ -1059,7 +1059,7 @@ void writer2(void ) {
             } 
         } 
         cnt4++;
-    //}
+    }
     return NULL;
 }
 
@@ -1207,9 +1207,6 @@ void *writer29(void *unused) {
 // markus: driver code
 int main(int argc, char *argv[]) {
   // initialize
-  pthread_t t1;
-  pthread_t t2;
-
     __CPROVER_ASYNC_1:
     writer1(); 
     __CPROVER_ASYNC_2:

@@ -1,0 +1,90 @@
+CBMC version 5.62.0 (ec1d828-dirty) 64-bit x86_64 linux
+Parsing logger_1.c
+Converting
+Type-checking logger_1
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Unwinding loop task_measure1.0 iteration 1 file logger_1.c line 82 function task_measure1 thread 1
+Unwinding loop task_measure1.0 iteration 2 file logger_1.c line 82 function task_measure1 thread 1
+Unwinding loop task_measure1.0 iteration 3 file logger_1.c line 82 function task_measure1 thread 1
+Unwinding loop task_measure1.0 iteration 4 file logger_1.c line 82 function task_measure1 thread 1
+Not unwinding loop task_measure1.0 iteration 5 file logger_1.c line 82 function task_measure1 thread 1
+Unwinding loop task_measure3.0 iteration 1 file logger_1.c line 118 function task_measure3 thread 2
+Unwinding loop task_measure3.0 iteration 2 file logger_1.c line 118 function task_measure3 thread 2
+Unwinding loop task_measure3.0 iteration 3 file logger_1.c line 118 function task_measure3 thread 2
+Unwinding loop task_measure3.0 iteration 4 file logger_1.c line 118 function task_measure3 thread 2
+Not unwinding loop task_measure3.0 iteration 5 file logger_1.c line 118 function task_measure3 thread 2
+Unwinding loop task_communicate.0 iteration 1 file logger_1.c line 134 function task_communicate thread 3
+Unwinding loop task_communicate.0 iteration 2 file logger_1.c line 134 function task_communicate thread 3
+Unwinding loop task_communicate.0 iteration 3 file logger_1.c line 134 function task_communicate thread 3
+Unwinding loop task_communicate.0 iteration 4 file logger_1.c line 134 function task_communicate thread 3
+Not unwinding loop task_communicate.0 iteration 5 file logger_1.c line 134 function task_communicate thread 3
+Unwinding loop task_measure2.0 iteration 1 file logger_1.c line 102 function task_measure2 thread 4
+Unwinding loop task_measure2.0 iteration 2 file logger_1.c line 102 function task_measure2 thread 4
+Unwinding loop task_measure2.0 iteration 3 file logger_1.c line 102 function task_measure2 thread 4
+Unwinding loop task_measure2.0 iteration 4 file logger_1.c line 102 function task_measure2 thread 4
+Not unwinding loop task_measure2.0 iteration 5 file logger_1.c line 102 function task_measure2 thread 4
+Runtime Symex: 0.0756154s
+Adding constraints
+using sc expand memory model
+start to make constraint
+392
+success make constraint
+--------------------log constraint nums:------------------
+fr : 7260
+fr-begin : 375
+fr-end : 375
+nested-isr : 380
+po : 367
+rf : 520
+rf-begin : 520
+rf-end : 520
+rf-order : 520
+rf-some : 135
+rfi : 360
+spawn-before-fr-false : 810
+spawn-before-ws : 150
+thread-spawn : 273
+ws-begin : 275
+ws-end : 275
+ws-ext : 250
+constraints sum : 13365
+spawn_relaxing_cons_nums: 9617
+size of program expression: 14412 steps
+no slicing due to threads
+Generated 20 VCC(s), 20 remaining after simplification
+Runtime Postprocess Equation: 1.33571s
+Passing problem to propositional reduction
+converting SSA
+Runtime Convert SSA: 0.838318s
+Running propositional reduction
+Post-processing
+Runtime Post-process: 0.000337077s
+Solving with MiniSAT 2.2.1 with simplifier
+111338 variables, 576432 clauses
+decisions: 299266
+propagations: 27486893
+conflicts: 44203
+SAT checker: instance is UNSATISFIABLE
+Runtime Solver: 14.2877s
+Runtime decision procedure: 15.1267s
+
+** Results:
+logger_1.c function task_communicate
+[task_communicate.assertion.1] line 186 assertion 0: SUCCESS
+
+logger_1.c function task_measure1
+[task_measure1.assertion.1] line 91 assertion 0: SUCCESS
+
+logger_1.c function task_measure2
+[task_measure2.assertion.1] line 108 assertion 0: SUCCESS
+
+logger_1.c function task_measure3
+[task_measure3.assertion.1] line 123 assertion 0: SUCCESS
+
+** 0 of 4 failed (1 iterations)
+VERIFICATION SUCCESSFUL

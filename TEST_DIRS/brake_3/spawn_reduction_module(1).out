@@ -1,0 +1,67 @@
+CBMC version 5.62.0 (ec1d828-dirty) 64-bit x86_64 linux
+Parsing brake_3.c
+Converting
+Type-checking brake_3
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Runtime Symex: 0.0373988s
+Adding constraints
+using sc expand memory model
+start to make constraint
+260
+success make constraint
+--------------------log constraint nums:------------------
+fr : 718
+fr-begin : 83
+fr-end : 83
+nested-isr : 249
+po : 201
+rf : 163
+rf-begin : 163
+rf-end : 163
+rf-order : 163
+rf-some : 74
+rfi : 52
+spawn-before-fr-false : 170
+spawn-before-ws : 68
+thread-spawn : 140
+ws-begin : 132
+ws-end : 132
+ws-ext : 128
+constraints sum : 2882
+spawn_relaxing_cons_nums: 1495
+size of program expression: 3430 steps
+no slicing due to threads
+Generated 3 VCC(s), 3 remaining after simplification
+Runtime Postprocess Equation: 0.126834s
+Passing problem to propositional reduction
+converting SSA
+Runtime Convert SSA: 0.279021s
+Running propositional reduction
+Post-processing
+Runtime Post-process: 0.000314202s
+Solving with MiniSAT 2.2.1 with simplifier
+40433 variables, 177556 clauses
+decisions: 52069
+propagations: 2857704
+conflicts: 9036
+SAT checker: instance is UNSATISFIABLE
+Runtime Solver: 2.00027s
+Runtime decision procedure: 2.27947s
+
+** Results:
+brake_3.c function task_FL_Wheel
+[task_FL_Wheel.assertion.1] line 483 assertion 0: SUCCESS
+
+brake_3.c function task_FR_Wheel
+[task_FR_Wheel.assertion.1] line 619 assertion 0: SUCCESS
+
+brake_3.c function task_RR_Wheel
+[task_RR_Wheel.assertion.1] line 375 assertion 0: SUCCESS
+
+** 0 of 3 failed (1 iterations)
+VERIFICATION SUCCESSFUL

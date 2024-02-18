@@ -386,7 +386,7 @@ void task_RR_Wheel(void ) {
     //rtb_to_int = rt_roundd_snf(brake_acc_nodiv_ctrl_U_In_RRRotation);
 	rtb_to_int = brake_acc_nodiv_ctrl_U_In_RRRotation;
 
-    bool rtb_RelationalOperator;
+    int rtb_RelationalOperator;
     int rtb_vms;
     int u;
     rtb_vms = brake_acc_nodiv_ctrl_P_ABS_RR_Wheel_vms_Gain + brake_acc_nodiv_ctrl_B_local_RT4;
@@ -415,9 +415,9 @@ void task_RR_Wheel(void ) {
     //tmp0 = tmp0 + u;
     int tmp1 = brake_acc_nodiv_ctrl_P_ABS_RR_Wheel_slip_abs_on_times_10_Gain + rtb_vms;
     if (tmp0 > tmp1) {
-        rtb_RelationalOperator = true;
+        rtb_RelationalOperator = 1;
     } else {
-        rtb_RelationalOperator = false;
+        rtb_RelationalOperator = 0;
     }
     /* Switch: '<S4>/Threshold_10km//h' */
     // Lihao: lift
@@ -502,7 +502,7 @@ void task_FL_Wheel(void ) {
     //  brake_acc_nodiv_ctrl_P_ABS_FL_Wheel);
 
     /* local block i/o variables */
-    bool rtb_RelationalOperator;
+    int rtb_RelationalOperator;
     int rtb_vms;
     int u;
     /* Outputs for Atomic SubSystem: '<S4>/If v>=10 km//h' */
@@ -536,9 +536,9 @@ void task_FL_Wheel(void ) {
     int tmp0 = brake_acc_nodiv_ctrl_P_ABS_FL_Wheel_times_10_Gain;
     int tmp1 = brake_acc_nodiv_ctrl_P_ABS_FL_Wheel_slip_abs_on_times_10_Gain + rtb_vms;
     if (tmp0 > tmp1) {
-        rtb_RelationalOperator = true;
+        rtb_RelationalOperator = 1;
     } else {
-        rtb_RelationalOperator = false;
+        rtb_RelationalOperator = 0;
     }
     /* Switch: '<S4>/Threshold_10km//h' */
     // Lihao: lift
@@ -639,7 +639,7 @@ void task_FR_Wheel(void )
     //  brake_acc_nodiv_ctrl_P_ABS_FR_Wheel);
 
     /* local block i/o variables */
-    bool rtb_RelationalOperator;
+    int rtb_RelationalOperator;
     /* Outputs for Atomic SubSystem: '<S4>/If v>=10 km//h' */
     /* Gain: '<S29>/v (m//s)' */
     int rtb_vms = brake_acc_nodiv_ctrl_P_ABS_FR_Wheel_vms_Gain + brake_acc_nodiv_ctrl_B_local_RT4;
@@ -671,9 +671,9 @@ void task_FR_Wheel(void )
     int tmp0 = brake_acc_nodiv_ctrl_P_ABS_FR_Wheel_times_10_Gain;
     int tmp1 = brake_acc_nodiv_ctrl_P_ABS_FR_Wheel_slip_abs_on_times_10_Gain + rtb_vms;
     if (tmp0 > tmp1) {
-        rtb_RelationalOperator = true;
+        rtb_RelationalOperator = 1;
     } else {
-        rtb_RelationalOperator = false;
+        rtb_RelationalOperator = 0;
     }
     /* Switch: '<S4>/Threshold_10km//h' */
     // Lihao: lift
@@ -735,7 +735,7 @@ void *task_RL_Wheel(void *unused)
 
 	rtb_to_int_g = brake_acc_nodiv_ctrl_U_In_RLRotation;
     /* local block i/o variables */
-    bool rtb_RelationalOperator;
+    int rtb_RelationalOperator;
     int rtb_vms;
     int u;
     rtb_vms = brake_acc_nodiv_ctrl_P_ABS_RL_Wheel_vms_Gain + brake_acc_nodiv_ctrl_B_local_RT4;
@@ -764,9 +764,9 @@ void *task_RL_Wheel(void *unused)
     int tmp0 = brake_acc_nodiv_ctrl_P_ABS_RL_Wheel_times_10_Gain;
     int tmp1 = brake_acc_nodiv_ctrl_P_ABS_RL_Wheel_slip_abs_on_times_10_Gain + rtb_vms;
     if (tmp0 > tmp1) {
-        rtb_RelationalOperator = true;
+        rtb_RelationalOperator = 1;
     } else {
-        rtb_RelationalOperator = false;
+        rtb_RelationalOperator = 0;
     }
 
     /* Switch: '<S4>/Threshold_10km//h' */

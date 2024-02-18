@@ -1,0 +1,82 @@
+CBMC version 5.62.0 (ec1d828-dirty) 64-bit x86_64 linux
+Parsing i2c_pca_isa_2.c
+Converting
+Type-checking i2c_pca_isa_2
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Unwinding loop req1.0 iteration 1 file i2c_pca_isa_2.c line 282 function req1 thread 1
+Unwinding loop req1.0 iteration 2 file i2c_pca_isa_2.c line 282 function req1 thread 1
+Not unwinding loop req1.0 iteration 3 file i2c_pca_isa_2.c line 282 function req1 thread 1
+Unwinding loop req6.0 iteration 1 file i2c_pca_isa_2.c line 338 function req6 thread 2
+Unwinding loop req6.0 iteration 2 file i2c_pca_isa_2.c line 338 function req6 thread 2
+Not unwinding loop req6.0 iteration 3 file i2c_pca_isa_2.c line 338 function req6 thread 2
+Unwinding loop req2.0 iteration 1 file i2c_pca_isa_2.c line 294 function req2 thread 3
+Unwinding loop req2.0 iteration 2 file i2c_pca_isa_2.c line 294 function req2 thread 3
+Not unwinding loop req2.0 iteration 3 file i2c_pca_isa_2.c line 294 function req2 thread 3
+Unwinding loop req3.0 iteration 1 file i2c_pca_isa_2.c line 306 function req3 thread 4
+Unwinding loop req3.0 iteration 2 file i2c_pca_isa_2.c line 306 function req3 thread 4
+Not unwinding loop req3.0 iteration 3 file i2c_pca_isa_2.c line 306 function req3 thread 4
+Unwinding loop req4.0 iteration 1 file i2c_pca_isa_2.c line 318 function req4 thread 5
+Unwinding loop req4.0 iteration 2 file i2c_pca_isa_2.c line 318 function req4 thread 5
+Not unwinding loop req4.0 iteration 3 file i2c_pca_isa_2.c line 318 function req4 thread 5
+Unwinding loop req5.0 iteration 1 file i2c_pca_isa_2.c line 328 function req5 thread 6
+Unwinding loop req5.0 iteration 2 file i2c_pca_isa_2.c line 328 function req5 thread 6
+Not unwinding loop req5.0 iteration 3 file i2c_pca_isa_2.c line 328 function req5 thread 6
+Runtime Symex: 0.0259355s
+Adding constraints
+using sc expand memory model
+ssa num:436
+start to make constraint
+121
+success make constraint
+--------------------log constraint nums:------------------
+fr : 5532
+fr-begin : 189
+fr-end : 189
+nested-isr : 288
+ni_eq : 4
+po : 160
+rf : 234
+rf-begin : 234
+rf-end : 234
+rf-order : 234
+rf-some : 45
+rfi : 60
+spawn-before-fr-false : 249
+spawn-before-ws : 96
+thread-spawn : 145
+ws-begin : 951
+ws-end : 951
+ws-ext : 1710
+constraints sum : 11505
+spawn_relaxing_cons_nums: 7146
+size of program expression: 11941 steps
+no slicing due to threads
+Generated 6 VCC(s), 6 remaining after simplification
+Runtime Postprocess Equation: 0.812488s
+Passing problem to propositional reduction
+converting SSA
+Runtime Convert SSA: 0.722616s
+Running propositional reduction
+Post-processing
+Runtime Post-process: 0.000754906s
+Solving with MiniSAT 2.2.1 with simplifier
+75240 variables, 368959 clauses
+decisions: 234486
+propagations: 36048694
+conflicts: 35386
+SAT checker: instance is UNSATISFIABLE
+Runtime Solver: 19.9507s
+Runtime decision procedure: 20.6743s
+
+** Results:
+i2c_pca_isa_2.c function req5
+[req5.assertion.1] line 331 assertion 0: SUCCESS
+[req5.assertion.2] line 331 assertion 0: SUCCESS
+
+** 0 of 2 failed (1 iterations)
+VERIFICATION SUCCESSFUL

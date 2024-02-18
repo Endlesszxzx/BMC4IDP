@@ -1,0 +1,80 @@
+CBMC version 5.62.0 (ec1d828-dirty) 64-bit x86_64 linux
+Parsing i8xx_tco_1.c
+Converting
+Type-checking i8xx_tco_1
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Unwinding loop writer1.3 iteration 1 file i8xx_tco_1.c line 743 function writer1 thread 1
+Unwinding loop writer1.3 iteration 2 file i8xx_tco_1.c line 743 function writer1 thread 1
+Unwinding loop writer1.3 iteration 3 file i8xx_tco_1.c line 743 function writer1 thread 1
+Unwinding loop writer1.3 iteration 4 file i8xx_tco_1.c line 743 function writer1 thread 1
+Not unwinding loop writer1.3 iteration 5 file i8xx_tco_1.c line 743 function writer1 thread 1
+Unwinding loop closer1.5 iteration 1 file i8xx_tco_1.c line 728 function closer1 thread 2
+Unwinding loop closer1.5 iteration 2 file i8xx_tco_1.c line 728 function closer1 thread 2
+Unwinding loop closer1.5 iteration 3 file i8xx_tco_1.c line 728 function closer1 thread 2
+Unwinding loop closer1.5 iteration 4 file i8xx_tco_1.c line 728 function closer1 thread 2
+Not unwinding loop closer1.5 iteration 5 file i8xx_tco_1.c line 728 function closer1 thread 2
+Unwinding loop closer2.5 iteration 1 file i8xx_tco_1.c line 717 function closer2 thread 3
+Unwinding loop closer2.5 iteration 2 file i8xx_tco_1.c line 717 function closer2 thread 3
+Unwinding loop closer2.5 iteration 3 file i8xx_tco_1.c line 717 function closer2 thread 3
+Unwinding loop closer2.5 iteration 4 file i8xx_tco_1.c line 717 function closer2 thread 3
+Not unwinding loop closer2.5 iteration 5 file i8xx_tco_1.c line 717 function closer2 thread 3
+Runtime Symex: 0.0300635s
+Adding constraints
+using sc expand memory model
+start to make constraint
+94
+success make constraint
+--------------------log constraint nums:------------------
+fr : 11290
+fr-begin : 250
+fr-end : 250
+nested-isr : 40
+ni_eq : 4
+po : 180
+rf : 320
+rf-begin : 320
+rf-end : 320
+rf-order : 320
+rf-some : 60
+rfi : 200
+spawn-before-fr-false : 770
+spawn-before-ws : 130
+thread-spawn : 152
+ws-begin : 655
+ws-end : 655
+ws-ext : 1050
+constraints sum : 16966
+spawn_relaxing_cons_nums: 13328
+size of program expression: 17517 steps
+no slicing due to threads
+Generated 10 VCC(s), 10 remaining after simplification
+Runtime Postprocess Equation: 1.09983s
+Passing problem to propositional reduction
+converting SSA
+Runtime Convert SSA: 0.586634s
+Running propositional reduction
+Post-processing
+Runtime Post-process: 0.000924445s
+Solving with MiniSAT 2.2.1 with simplifier
+66921 variables, 350021 clauses
+decisions: 94595
+propagations: 12424414
+conflicts: 17538
+SAT checker: instance is UNSATISFIABLE
+Runtime Solver: 6.35077s
+Runtime decision procedure: 6.93822s
+
+** Results:
+i8xx_tco_1.c function closer1
+[closer1.assertion.1] line 732 assertion 0: SUCCESS
+
+i8xx_tco_1.c function closer2
+[closer2.assertion.1] line 721 assertion 0: SUCCESS
+
+** 0 of 2 failed (1 iterations)
+VERIFICATION SUCCESSFUL

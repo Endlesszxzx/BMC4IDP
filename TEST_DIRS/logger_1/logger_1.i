@@ -572,36 +572,43 @@ void start(int _startTime, int _interval)
 void task_measure1(void) {
     __CPROVER_ASYNC_1:
     task_measure3();
+    while (cnt1 < 5) {
         cnt1++;
         int tmp_tickCounter = tickCounter;
         int tmp_interval = interval;
         int value = 1;
         if (tickCounter != 0) {
-            ((void) sizeof ((0) ? 1 : 0), __extension__ ({ if (0) ; else __assert_fail ("0", "logger3.c", 91, __extension__ __PRETTY_FUNCTION__); }));
+            ((void) sizeof ((0) ? 1 : 0), __extension__ ({ if (0) ; else __assert_fail ("0", "logger_1.c", 91, __extension__ __PRETTY_FUNCTION__); }));
         }
         intervalCounter++;
         records = value;
         numberOfRecords++;
+    }
 }
 void task_measure2(void) {
+    while (cnt2 < 5) {
         cnt2++;
         tickCounter = 0;
         if (tickCounter != 0) {
-            ((void) sizeof ((0) ? 1 : 0), __extension__ ({ if (0) ; else __assert_fail ("0", "logger3.c", 108, __extension__ __PRETTY_FUNCTION__); }));
+            ((void) sizeof ((0) ? 1 : 0), __extension__ ({ if (0) ; else __assert_fail ("0", "logger_1.c", 108, __extension__ __PRETTY_FUNCTION__); }));
         }
+    }
 }
 void task_measure3(void ) {
     __CPROVER_ASYNC_1:
     task_communicate();
+    while (cnt3 < 5) {
         tickCounter = 0;
         if (tickCounter != 0) {
-            ((void) sizeof ((0) ? 1 : 0), __extension__ ({ if (0) ; else __assert_fail ("0", "logger3.c", 123, __extension__ __PRETTY_FUNCTION__); }));
+            ((void) sizeof ((0) ? 1 : 0), __extension__ ({ if (0) ; else __assert_fail ("0", "logger_1.c", 123, __extension__ __PRETTY_FUNCTION__); }));
         }
         cnt3++;
+    }
 }
 void task_communicate(void) {
     __CPROVER_ASYNC_1:
     task_measure2();
+    while (cnt4 < 5) {
         cnt4++;
         int _startTime = 1;
         int _interval = 1;
@@ -642,12 +649,13 @@ void task_communicate(void) {
                     interval = _interval;
                     systemState = 1;
                     if (numberOfRecords != 0) {
-                        ((void) sizeof ((0) ? 1 : 0), __extension__ ({ if (0) ; else __assert_fail ("0", "logger3.c", 186, __extension__ __PRETTY_FUNCTION__); }));
+                        ((void) sizeof ((0) ? 1 : 0), __extension__ ({ if (0) ; else __assert_fail ("0", "logger_1.c", 186, __extension__ __PRETTY_FUNCTION__); }));
                     }
                     sendit = 1;
                 }
             }
         }
+    }
 }
 int main() {
     systemState = 0;

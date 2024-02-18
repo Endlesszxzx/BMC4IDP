@@ -1,0 +1,77 @@
+CBMC version 5.62.0 (ec1d828-dirty) 64-bit x86_64 linux
+Parsing wdt_pci_3.c
+Converting
+Type-checking wdt_pci_3
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Unwinding loop writer1.0 iteration 1 file wdt_pci_3.c line 1024 function writer1 thread 1
+Unwinding loop writer1.0 iteration 2 file wdt_pci_3.c line 1024 function writer1 thread 1
+Unwinding loop writer1.0 iteration 3 file wdt_pci_3.c line 1024 function writer1 thread 1
+Unwinding loop writer1.0 iteration 4 file wdt_pci_3.c line 1024 function writer1 thread 1
+Not unwinding loop writer1.0 iteration 5 file wdt_pci_3.c line 1024 function writer1 thread 1
+Unwinding loop writer2.0 iteration 1 file wdt_pci_3.c line 1046 function writer2 thread 2
+Unwinding loop writer2.0 iteration 2 file wdt_pci_3.c line 1046 function writer2 thread 2
+Unwinding loop writer2.0 iteration 3 file wdt_pci_3.c line 1046 function writer2 thread 2
+Unwinding loop writer2.0 iteration 4 file wdt_pci_3.c line 1046 function writer2 thread 2
+Not unwinding loop writer2.0 iteration 5 file wdt_pci_3.c line 1046 function writer2 thread 2
+Runtime Symex: 0.0236085s
+Adding constraints
+using sc expand memory model
+start to make constraint
+64
+success make constraint
+--------------------log constraint nums:------------------
+fr : 1050
+fr-begin : 74
+fr-end : 74
+nested-isr : 55
+po : 139
+rf : 128
+rf-begin : 128
+rf-end : 128
+rf-order : 128
+rf-some : 54
+rfi : 73
+spawn-before-fr-false : 143
+spawn-before-ws : 52
+thread-spawn : 107
+ws-begin : 199
+ws-end : 199
+ws-ext : 294
+constraints sum : 3025
+spawn_relaxing_cons_nums: 1657
+size of program expression: 3385 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Runtime Postprocess Equation: 0.1575s
+Passing problem to propositional reduction
+converting SSA
+Runtime Convert SSA: 0.183436s
+Running propositional reduction
+Post-processing
+Runtime Post-process: 0.000963505s
+Solving with MiniSAT 2.2.1 with simplifier
+27558 variables, 126552 clauses
+decisions: 4860
+propagations: 562995
+conflicts: 999
+SAT checker: instance is UNSATISFIABLE
+Runtime Solver: 0.786876s
+Runtime decision procedure: 0.970561s
+
+** Results:
+wdt_pci_3.c function closer1
+[closer1.assertion.1] line 973 assertion 0: SUCCESS
+
+wdt_pci_3.c function closer2
+[closer2.assertion.1] line 1005 assertion 0: SUCCESS
+
+wdt_pci_3.c function writer1
+[writer1.assertion.1] line 1022 assertion y>=0&&y<=3: SUCCESS
+
+** 0 of 3 failed (1 iterations)
+VERIFICATION SUCCESSFUL

@@ -49,7 +49,7 @@ void task_measure3();
 const int __CPROVER_thread_priorities[] = {5, 2, 6, 3};
 const char* __CPROVER_threads[] = {"c::task_communicate", "c::task_measure1", "c::task_measure2", "c::task_measure3"};
 
-#define LIMIT 10
+#define LIMIT 5
 int cnt1, cnt2, cnt3, cnt4;
 
 void stop(void)
@@ -79,7 +79,7 @@ void task_measure1(void) {
     __CPROVER_ASYNC_1:
     task_measure3();
 
-    //while (cnt1 < LIMIT) {
+    while (cnt1 < LIMIT) {
         cnt1++;
         int tmp_tickCounter = tickCounter;
         int tmp_interval = interval;
@@ -94,12 +94,12 @@ void task_measure1(void) {
         //records[numberOfRecords] =  value;
         records = value;
         numberOfRecords++;
-    //}
+    }
 }
 
 // Priority is 2
 void task_measure2(void) {
-    //while (cnt2 < LIMIT) {
+    while (cnt2 < LIMIT) {
         cnt2++;
         tickCounter = 0;
         // this assertion fails in both cases
@@ -108,14 +108,14 @@ void task_measure2(void) {
             assert(0);
         }
         //records[numberOfRecords] =  value;
-    //}
+    }
 }
 
 // Priority is 6
 void task_measure3(void ) {
     __CPROVER_ASYNC_1:
     task_communicate();
-    //while (cnt3 < LIMIT) {
+    while (cnt3 < LIMIT) {
         tickCounter = 0;
         // our method does not fail
         // assert(tickCounter == 0);
@@ -124,14 +124,14 @@ void task_measure3(void ) {
         }
         cnt3++;
         //records[numberOfRecords] =  value;
-    //}
+    }
 }
 
 // Priority is 3
 void task_communicate(void) {
     __CPROVER_ASYNC_1:
     task_measure2();
-    //while (cnt4 < LIMIT) {
+    while (cnt4 < LIMIT) {
         cnt4++;
         //int _startTime = get_uint32();
         //int _interval = get_uint16();
@@ -191,7 +191,7 @@ void task_communicate(void) {
                 }
             }
         }
-    //}
+    }
 }
 
 

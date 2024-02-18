@@ -1,9 +1,9 @@
 TEST_DIRS="blink_1
 blink_2
 blink_3
-brake1
-brake2
-brake3
+brake_1
+brake_2
+brake_3
 brake_4
 i2c_pca_isa_1
 i2c_pca_isa_2
@@ -20,9 +20,8 @@ logger_4
 sc520_wdt
 sc1200wdt
 wdt_pci_1
-wdt_pci_3
+wdt_pci_2
 wdt_pci_3
 "
-PO_DIFF_DIR="
-po_brake2_3_bug
-"
+
+

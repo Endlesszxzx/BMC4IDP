@@ -266,7 +266,7 @@ module_init(pca_isa_init);
 module_exit(pca_isa_exit);
 #endif
 
-#define LIMIT 20
+#define LIMIT 5
 int cnt1, cnt2, cnt3, cnt4, cnt5, cnt6, cnt7, cnt8;
 
 void req1();
@@ -285,86 +285,86 @@ void req1(void) {
     req4(); 
     __CPROVER_ASYNC_3:
     req6(); 
-    //while(cnt1< LIMIT) {
+    while(cnt1< LIMIT) {
         irq = 0;
         pca_isa_init(1, 1);
         //pca_isa_probe(1, 1);
         pca_isa_exit();
         cnt1++;
-    //}
+    }
 }
 
 void req2(void) {
-    //while(cnt2 < LIMIT) {
+    while(cnt2 < LIMIT) {
         irq = 0;
         pca_isa_init(2, 2);
         //pca_isa_probe(2, 2);
         pca_isa_exit();
         cnt2++;
-    //}
+    }
 }
 
 void req3(void) {
     __CPROVER_ASYNC_1:
     req5(); 
-    //while(cnt3 < LIMIT) {
+    while(cnt3 < LIMIT) {
         irq = 0;
         pca_isa_init(3, 3);
         //pca_isa_probe(3, 3);
         pca_isa_exit();
         cnt3++;
-    //}
+    }
 }
 
 void req4(void) {
-    //while(cnt4 < LIMIT) {
+    while(cnt4 < LIMIT) {
         irq = 0;
         pca_isa_init(4, 4);
         //pca_isa_probe(4, 4);
         pca_isa_exit();
         cnt4++;
-    //}
+    }
 }
 
 void req5(void) {
     __CPROVER_ASYNC_1:
     req7(); 
-    //while(cnt5 < LIMIT) {
+    while(cnt5 < LIMIT) {
         irq = 0;
         pca_isa_init(5, 5);
         //pca_isa_probe(5, 5);
         pca_isa_exit();
         cnt5++;
-    //}
+    }
 }
 
 void req6(void) {
-    //while(cnt6 < LIMIT) {
+    while(cnt6 < LIMIT) {
         irq = -1;
         cnt6++;
-    //}
+    }
 }
 
 void req7(void) {
     __CPROVER_ASYNC_1:
     req8(); 
-    //while(cnt7 < LIMIT) {
+    while(cnt7 < LIMIT) {
         irq = 0;
         pca_isa_init(7, 7);
         //pca_isa_probe(7, 7);
         pca_isa_exit();
         cnt7++;
-    //}
+    }
 }
 
 void req8(void) {
-    //while(cnt8 < LIMIT) {
+    while(cnt8 < LIMIT) {
         irq = 0;
         pca_isa_init(8, 8);
         pca_isa_probe(8, 8);
         pca_isa_exit();
         cnt8++;
-    //}
+    }
 }
 
 int main(void)

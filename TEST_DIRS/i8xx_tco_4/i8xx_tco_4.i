@@ -64,41 +64,45 @@ void closer1();
 void closer2();
 void writer1();
 void closer2(void ) {
+    while(cnt1<5) {
         tco_write_buf = 'V';
         do { if (1) { if (!nowayout) { tco_expect_close = 0; if (tco_write_buf == 'V') { tco_expect_close = 42; } } } do { do { tco1_rld = 0x01; } while (0); } while (0); } while (0);
         tco_expect_close = 42;
-        do { if (tco_expect_close != 42) { ((void) sizeof ((0) ? 1 : 0), __extension__ ({ if (0) ; else __assert_fail ("0", "i8xx_tco_w.c", 721, __extension__ __PRETTY_FUNCTION__); })); } else { } do { timer_alive = 0; } while (0); tco_expect_close = 0; } while (0);
+        do { if (tco_expect_close != 42) { ((void) sizeof ((0) ? 1 : 0), __extension__ ({ if (0) ; else __assert_fail ("0", "i8xx_tco_4.c", 721, __extension__ __PRETTY_FUNCTION__); })); } else { } do { timer_alive = 0; } while (0); tco_expect_close = 0; } while (0);
         cnt1++;
         x=2;
         y=0;
-    return NULL;
+    }
+    return 0;
 }
 void closer1(void ) {
+    while(cnt2<5) {
         tco_write_buf = 'V';
         do { if (1) { if (!nowayout) { tco_expect_close = 0; if (tco_write_buf == 'V') { tco_expect_close = 42; } } } do { do { tco1_rld = 0x01; } while (0); } while (0); } while (0);
  __CPROVER_ASYNC_1:
  closer2();
  x=1;
  y=x+y;
- ((void) sizeof ((y>=0&&y<=3) ? 1 : 0), __extension__ ({ if (y>=0&&y<=3) ; else __assert_fail ("y>=0&&y<=3", "i8xx_tco_w.c", 737, __extension__ __PRETTY_FUNCTION__); }));
+ ((void) sizeof ((y>=0&&y<=3) ? 1 : 0), __extension__ ({ if (y>=0&&y<=3) ; else __assert_fail ("y>=0&&y<=3", "i8xx_tco_4.c", 737, __extension__ __PRETTY_FUNCTION__); }));
         tco_expect_close = 42;
-        do { if (tco_expect_close != 42) { ((void) sizeof ((0) ? 1 : 0), __extension__ ({ if (0) ; else __assert_fail ("0", "i8xx_tco_w.c", 739, __extension__ __PRETTY_FUNCTION__); })); } else { } do { timer_alive = 0; } while (0); tco_expect_close = 0; } while (0);
+        do { if (tco_expect_close != 42) { ((void) sizeof ((0) ? 1 : 0), __extension__ ({ if (0) ; else __assert_fail ("0", "i8xx_tco_4.c", 739, __extension__ __PRETTY_FUNCTION__); })); } else { } do { timer_alive = 0; } while (0); tco_expect_close = 0; } while (0);
         cnt2++;
-    return NULL;
+    }
+    return 0;
 }
 void writer1(void ) {
     __CPROVER_ASYNC_1:
     closer1();
     x=0;
     y=2;
+    while(cnt3<5) {
         do { if (0) { if (!nowayout) { tco_expect_close = 0; if (tco_write_buf == 'V') { tco_expect_close = 42; } } } do { do { tco1_rld = 0x01; } while (0); } while (0); } while (0);
         cnt3++;
-    return NULL;
+    }
+    return 0;
 }
 int main(int argc, char *argv[]) {
   tco_expect_close = 0;
-  pthread_t t1;
-  pthread_t t2;
     __CPROVER_ASYNC_1:
     writer1();
 }

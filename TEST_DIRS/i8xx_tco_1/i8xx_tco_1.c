@@ -563,7 +563,7 @@ MODULE_DEVICE_TABLE (pci, i8xx_tco_pci_tbl);
 
 static unsigned char __init i8xx_tco_getdevice (void)
 {
-	struct pci_dev *dev = NULL;
+	struct pci_dev *dev = 0;
 	u8 val1, val2;
 	u16 badr;
 	/*
@@ -632,7 +632,7 @@ static int __init watchdog_init (void)
 	spin_lock_init(&tco_lock);
 
 	/* Check whether or not the hardware watchdog is there */
-	if (!i8xx_tco_getdevice () || i8xx_tco_pci == NULL)
+	if (!i8xx_tco_getdevice () || i8xx_tco_pci == 0)
 		return -ENODEV;
 
 	if (!request_region (TCOBASE, 0x10, "i8xx TCO")) {
@@ -707,32 +707,32 @@ MODULE_LICENSE("GPL");
 MODULE_ALIAS_MISCDEV(WATCHDOG_MINOR);
 #endif 
 
-#define LIMIT 20
+#define LIMIT 5
 int cnt1, cnt2, cnt3;
 void closer1();
 void closer2();
 void writer1();
 
 void closer2(void ) {
-    //while(cnt1<LIMIT) {
+    while(cnt1<LIMIT) {
         tco_write_buf = 'V';
         i8xx_tco_write(1);
         tco_expect_close = 42;
         i8xx_tco_release();
         cnt1++;
-    //}
-    return NULL;
+    }
+    return 0;
 }
 
 void closer1(void ) {
-    //while(cnt2<LIMIT) {
+    while(cnt2<LIMIT) {
         tco_write_buf = 'V';
         i8xx_tco_write(1);
         tco_expect_close = 42;
         i8xx_tco_release();
         cnt2++;
-    //}
-    return NULL;
+    }
+    return 0;
 }
 
 void writer1(void ) {
@@ -740,28 +740,25 @@ void writer1(void ) {
     closer1(); 
     __CPROVER_ASYNC_2:
     closer2(); 
-    //while(cnt3<LIMIT) {
+    while(cnt3<LIMIT) {
         i8xx_tco_write(0);
         cnt3++;
-    //}
-    return NULL;
+    }
+    return 0;
 }
 
 // markus: driver code
 int main(int argc, char *argv[]) {
   // initialize
   tco_expect_close = 0;
-  pthread_t t1;
-  pthread_t t2;
-
     __CPROVER_ASYNC_1:
     writer1(); 
   // markus: functions in fops are write, open, release, ioctl
   /*
-  pthread_create(&t1, NULL, writer1, NULL);
-  pthread_create(&t2, NULL, closer1, NULL);
-  pthread_create(&t2, NULL, closer2, NULL);
-  pthread_exit(NULL);
+  pthread_create(&t1, 0, writer1, 0);
+  pthread_create(&t2, 0, closer1, 0);
+  pthread_create(&t2, 0, closer2, 0);
+  pthread_exit(0);
   */
 
 }

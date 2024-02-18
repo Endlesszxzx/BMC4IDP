@@ -1,0 +1,82 @@
+CBMC version 5.62.0 (ec1d828-dirty) 64-bit x86_64 linux
+Parsing i8xx_tco_2.c
+Converting
+Type-checking i8xx_tco_2
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Unwinding loop closer1.3 iteration 1 file i8xx_tco_2.c line 724 function closer1 thread 1
+Unwinding loop closer1.3 iteration 2 file i8xx_tco_2.c line 724 function closer1 thread 1
+Unwinding loop closer1.3 iteration 3 file i8xx_tco_2.c line 724 function closer1 thread 1
+Unwinding loop closer1.3 iteration 4 file i8xx_tco_2.c line 724 function closer1 thread 1
+Not unwinding loop closer1.3 iteration 5 file i8xx_tco_2.c line 724 function closer1 thread 1
+Unwinding loop closer2.5 iteration 1 file i8xx_tco_2.c line 734 function closer2 thread 2
+Unwinding loop closer2.5 iteration 2 file i8xx_tco_2.c line 734 function closer2 thread 2
+Unwinding loop closer2.5 iteration 3 file i8xx_tco_2.c line 734 function closer2 thread 2
+Unwinding loop closer2.5 iteration 4 file i8xx_tco_2.c line 734 function closer2 thread 2
+Not unwinding loop closer2.5 iteration 5 file i8xx_tco_2.c line 734 function closer2 thread 2
+Unwinding loop writer1.3 iteration 1 file i8xx_tco_2.c line 747 function writer1 thread 3
+Unwinding loop writer1.3 iteration 2 file i8xx_tco_2.c line 747 function writer1 thread 3
+Unwinding loop writer1.3 iteration 3 file i8xx_tco_2.c line 747 function writer1 thread 3
+Unwinding loop writer1.3 iteration 4 file i8xx_tco_2.c line 747 function writer1 thread 3
+Not unwinding loop writer1.3 iteration 5 file i8xx_tco_2.c line 747 function writer1 thread 3
+Unwinding loop writer2.3 iteration 1 file i8xx_tco_2.c line 755 function writer2 thread 4
+Unwinding loop writer2.3 iteration 2 file i8xx_tco_2.c line 755 function writer2 thread 4
+Unwinding loop writer2.3 iteration 3 file i8xx_tco_2.c line 755 function writer2 thread 4
+Unwinding loop writer2.3 iteration 4 file i8xx_tco_2.c line 755 function writer2 thread 4
+Not unwinding loop writer2.3 iteration 5 file i8xx_tco_2.c line 755 function writer2 thread 4
+Runtime Symex: 0.0310971s
+Adding constraints
+using sc expand memory model
+start to make constraint
+130
+success make constraint
+--------------------log constraint nums:------------------
+fr : 4835
+fr-begin : 125
+fr-end : 125
+nested-isr : 235
+ni_eq : 4
+po : 186
+rf : 190
+rf-begin : 190
+rf-end : 190
+rf-order : 190
+rf-some : 65
+rfi : 165
+spawn-before-fr-false : 290
+spawn-before-ws : 90
+thread-spawn : 158
+ws-begin : 565
+ws-end : 565
+ws-ext : 950
+constraints sum : 9118
+spawn_relaxing_cons_nums: 6173
+size of program expression: 9697 steps
+no slicing due to threads
+Generated 5 VCC(s), 5 remaining after simplification
+Runtime Postprocess Equation: 0.544345s
+Passing problem to propositional reduction
+converting SSA
+Runtime Convert SSA: 0.456208s
+Running propositional reduction
+Post-processing
+Runtime Post-process: 0.00114597s
+Solving with MiniSAT 2.2.1 with simplifier
+61722 variables, 301440 clauses
+decisions: 48387
+propagations: 3667995
+conflicts: 8986
+SAT checker: instance is UNSATISFIABLE
+Runtime Solver: 2.84922s
+Runtime decision procedure: 3.30583s
+
+** Results:
+i8xx_tco_2.c function closer2
+[closer2.assertion.1] line 738 assertion 0: SUCCESS
+
+** 0 of 1 failed (1 iterations)
+VERIFICATION SUCCESSFUL

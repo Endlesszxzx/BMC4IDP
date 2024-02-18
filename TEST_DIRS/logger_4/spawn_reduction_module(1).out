@@ -1,0 +1,936 @@
+CBMC version 5.62.0 (ec1d828-dirty) 64-bit x86_64 linux
+Parsing logger_4.c
+Converting
+Type-checking logger_4
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Runtime Symex: 0.119262s
+Adding constraints
+using sc expand memory model
+start to make constraint
+405
+success make constraint
+--------------------log constraint nums:------------------
+fr : 2166
+fr-begin : 572
+fr-end : 572
+nested-isr : 300
+ni_eq : 4
+po : 734
+rf : 1118
+rf-begin : 1118
+rf-end : 1118
+rf-order : 1118
+rf-some : 506
+rfi : 54
+spawn-before-fr-false : 822
+spawn-before-ws : 148
+thread-spawn : 637
+ws-begin : 265
+ws-end : 265
+ws-ext : 234
+constraints sum : 11751
+spawn_relaxing_cons_nums: 4829
+size of program expression: 13118 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Runtime Postprocess Equation: 0.859775s
+Passing problem to propositional reduction
+converting SSA
+Runtime Convert SSA: 1.17613s
+Running propositional reduction
+Post-processing
+Runtime Post-process: 0.00041572s
+Solving with MiniSAT 2.2.1 with simplifier
+148733 variables, 682334 clauses
+decisions: 1106497
+propagations: 72508938
+conflicts: 142685
+SAT checker: instance is SATISFIABLE
+Runtime Solver: 58.2583s
+Runtime decision procedure: 59.4358s
+Building error trace
+
+** Results:
+logger_4.c function task_measure
+[task_measure.assertion.1] line 80 assertion numberOfRecords==pos+1: FAILURE
+
+Trace for task_measure.assertion.1:
+
+State 19 file logger_4.c function __CPROVER_initialize line 128 thread 0
+----------------------------------------------------
+  msgBuffer[0l]=0 (00000000)
+
+State 20 file logger_4.c function __CPROVER_initialize line 128 thread 0
+----------------------------------------------------
+  msgBuffer[1l]=0 (00000000)
+
+State 21 file logger_4.c function __CPROVER_initialize line 128 thread 0
+----------------------------------------------------
+  msgBuffer[2l]=0 (00000000)
+
+State 22 file logger_4.c function __CPROVER_initialize line 128 thread 0
+----------------------------------------------------
+  msgBuffer[3l]=0 (00000000)
+
+State 23 file logger_4.c function __CPROVER_initialize line 128 thread 0
+----------------------------------------------------
+  msgBuffer[4l]=0 (00000000)
+
+State 24 file logger_4.c function __CPROVER_initialize line 128 thread 0
+----------------------------------------------------
+  msgBuffer[5l]=0 (00000000)
+
+State 25 file logger_4.c function __CPROVER_initialize line 128 thread 0
+----------------------------------------------------
+  msgBuffer[6l]=0 (00000000)
+
+State 26 file logger_4.c function __CPROVER_initialize line 128 thread 0
+----------------------------------------------------
+  msgBuffer[7l]=0 (00000000)
+
+State 27 file logger_4.c function __CPROVER_initialize line 128 thread 0
+----------------------------------------------------
+  msgBuffer[8l]=0 (00000000)
+
+State 28 file logger_4.c function __CPROVER_initialize line 128 thread 0
+----------------------------------------------------
+  msgBuffer[9l]=0 (00000000)
+
+State 29 file logger_4.c function __CPROVER_initialize line 128 thread 0
+----------------------------------------------------
+  msgBuffer[10l]=0 (00000000)
+
+State 30 file logger_4.c function __CPROVER_initialize line 128 thread 0
+----------------------------------------------------
+  msgBuffer[11l]=0 (00000000)
+
+State 31 file logger_4.c function __CPROVER_initialize line 128 thread 0
+----------------------------------------------------
+  msgBuffer[12l]=0 (00000000)
+
+State 32 file logger_4.c function __CPROVER_initialize line 128 thread 0
+----------------------------------------------------
+  msgBuffer[13l]=0 (00000000)
+
+State 33 file logger_4.c function __CPROVER_initialize line 128 thread 0
+----------------------------------------------------
+  msgBuffer[14l]=0 (00000000)
+
+State 34 file logger_4.c function __CPROVER_initialize line 128 thread 0
+----------------------------------------------------
+  msgBuffer[15l]=0 (00000000)
+
+State 39 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[0l]=0 (00000000 00000000)
+
+State 40 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[1l]=0 (00000000 00000000)
+
+State 41 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[2l]=0 (00000000 00000000)
+
+State 42 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[3l]=0 (00000000 00000000)
+
+State 43 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[4l]=0 (00000000 00000000)
+
+State 44 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[5l]=0 (00000000 00000000)
+
+State 45 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[6l]=0 (00000000 00000000)
+
+State 46 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[7l]=0 (00000000 00000000)
+
+State 47 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[8l]=0 (00000000 00000000)
+
+State 48 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[9l]=0 (00000000 00000000)
+
+State 49 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[10l]=0 (00000000 00000000)
+
+State 50 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[11l]=0 (00000000 00000000)
+
+State 51 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[12l]=0 (00000000 00000000)
+
+State 52 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[13l]=0 (00000000 00000000)
+
+State 53 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[14l]=0 (00000000 00000000)
+
+State 54 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[15l]=0 (00000000 00000000)
+
+State 55 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[16l]=0 (00000000 00000000)
+
+State 56 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[17l]=0 (00000000 00000000)
+
+State 57 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[18l]=0 (00000000 00000000)
+
+State 58 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[19l]=0 (00000000 00000000)
+
+State 59 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[20l]=0 (00000000 00000000)
+
+State 60 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[21l]=0 (00000000 00000000)
+
+State 61 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[22l]=0 (00000000 00000000)
+
+State 62 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[23l]=0 (00000000 00000000)
+
+State 63 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[24l]=0 (00000000 00000000)
+
+State 64 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[25l]=0 (00000000 00000000)
+
+State 65 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[26l]=0 (00000000 00000000)
+
+State 66 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[27l]=0 (00000000 00000000)
+
+State 67 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[28l]=0 (00000000 00000000)
+
+State 68 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[29l]=0 (00000000 00000000)
+
+State 69 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[30l]=0 (00000000 00000000)
+
+State 70 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[31l]=0 (00000000 00000000)
+
+State 71 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[32l]=0 (00000000 00000000)
+
+State 72 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[33l]=0 (00000000 00000000)
+
+State 73 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[34l]=0 (00000000 00000000)
+
+State 74 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[35l]=0 (00000000 00000000)
+
+State 75 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[36l]=0 (00000000 00000000)
+
+State 76 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[37l]=0 (00000000 00000000)
+
+State 77 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[38l]=0 (00000000 00000000)
+
+State 78 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[39l]=0 (00000000 00000000)
+
+State 79 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[40l]=0 (00000000 00000000)
+
+State 80 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[41l]=0 (00000000 00000000)
+
+State 81 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[42l]=0 (00000000 00000000)
+
+State 82 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[43l]=0 (00000000 00000000)
+
+State 83 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[44l]=0 (00000000 00000000)
+
+State 84 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[45l]=0 (00000000 00000000)
+
+State 85 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[46l]=0 (00000000 00000000)
+
+State 86 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[47l]=0 (00000000 00000000)
+
+State 87 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[48l]=0 (00000000 00000000)
+
+State 88 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[49l]=0 (00000000 00000000)
+
+State 89 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[50l]=0 (00000000 00000000)
+
+State 90 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[51l]=0 (00000000 00000000)
+
+State 91 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[52l]=0 (00000000 00000000)
+
+State 92 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[53l]=0 (00000000 00000000)
+
+State 93 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[54l]=0 (00000000 00000000)
+
+State 94 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[55l]=0 (00000000 00000000)
+
+State 95 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[56l]=0 (00000000 00000000)
+
+State 96 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[57l]=0 (00000000 00000000)
+
+State 97 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[58l]=0 (00000000 00000000)
+
+State 98 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[59l]=0 (00000000 00000000)
+
+State 99 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[60l]=0 (00000000 00000000)
+
+State 100 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[61l]=0 (00000000 00000000)
+
+State 101 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[62l]=0 (00000000 00000000)
+
+State 102 file logger_4.c function __CPROVER_initialize line 10 thread 0
+----------------------------------------------------
+  records[63l]=0 (00000000 00000000)
+
+State 111 file logger_4.c function initialize line 189 thread 0
+----------------------------------------------------
+  systemState=2 (00000010)
+
+State 112 file logger_4.c function initialize line 190 thread 0
+----------------------------------------------------
+  periodCounter=0u (00000000 00000000 00000000 00000000)
+
+State 113 file logger_4.c function initialize line 191 thread 0
+----------------------------------------------------
+  tickCounter=0 (00000000 00000000)
+
+State 114 file logger_4.c function initialize line 192 thread 0
+----------------------------------------------------
+  startTime=0u (00000000 00000000 00000000 00000000)
+
+State 115 file logger_4.c function initialize line 193 thread 0
+----------------------------------------------------
+  numberOfRecords=0 (00000000)
+
+State 142 file logger_4.c function task_ext_power line 90 thread 1
+----------------------------------------------------
+  power=1 (00000001)
+
+State 144 file logger_4.c function task_ext_power line 91 thread 1
+----------------------------------------------------
+  systemState=0 (00000000)
+
+State 149 file logger_4.c function task_communicate line 132 thread 3
+----------------------------------------------------
+  buffer=msgBuffer (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 152 file logger_4.c function receive_cmd line 119 thread 3
+----------------------------------------------------
+  msgBuffer[0l]=1 (00000001)
+
+State 155 file logger_4.c function receive_cmd line 120 thread 3
+----------------------------------------------------
+  msgBuffer[1l]=0 (00000000)
+
+State 158 file logger_4.c function receive_cmd line 121 thread 3
+----------------------------------------------------
+  msgBuffer[2l]=0 (00000000)
+
+State 161 file logger_4.c function receive_cmd line 122 thread 3
+----------------------------------------------------
+  msgBuffer[3l]=0 (00000000)
+
+State 164 file logger_4.c function receive_cmd line 123 thread 3
+----------------------------------------------------
+  msgBuffer[4l]=0 (00000000)
+
+State 167 file logger_4.c function receive_cmd line 124 thread 3
+----------------------------------------------------
+  msgBuffer[5l]=0 (00000000)
+
+State 170 file logger_4.c function receive_cmd line 125 thread 3
+----------------------------------------------------
+  msgBuffer[6l]=1 (00000001)
+
+State 174 file logger_4.c function task_communicate line 132 thread 3
+----------------------------------------------------
+  len=0 (00000000)
+
+State 176 file logger_4.c function task_communicate line 133 thread 3
+----------------------------------------------------
+  cmd=1 (00000001)
+
+State 178 file logger_4.c function task_communicate line 134 thread 3
+----------------------------------------------------
+  decodingStatus=0 (00000000)
+
+State 180 file logger_4.c function task_communicate line 136 thread 3
+----------------------------------------------------
+  decodingStatus=1 (00000001)
+
+State 183 file logger_4.c function task_communicate line 142 thread 3
+----------------------------------------------------
+  rspStatus=1 (00000001)
+
+State 193 file logger_4.c function task_communicate line 174 thread 3
+----------------------------------------------------
+  buffer=msgBuffer (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 194 file logger_4.c function task_communicate line 174 thread 3
+----------------------------------------------------
+  pos=1 (00000001)
+
+State 198 file logger_4.c function task_communicate line 174 thread 3
+----------------------------------------------------
+  _startTime=0u (00000000 00000000 00000000 00000000)
+
+State 203 file logger_4.c function task_communicate line 175 thread 3
+----------------------------------------------------
+  buffer=msgBuffer (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 204 file logger_4.c function task_communicate line 175 thread 3
+----------------------------------------------------
+  pos=5 (00000101)
+
+State 208 file logger_4.c function task_communicate line 175 thread 3
+----------------------------------------------------
+  _period=1 (00000000 00000001)
+
+State 211 file logger_4.c function task_communicate line 176 thread 3
+----------------------------------------------------
+  _startTime=0u (00000000 00000000 00000000 00000000)
+
+State 212 file logger_4.c function task_communicate line 176 thread 3
+----------------------------------------------------
+  _period=1 (00000000 00000001)
+
+State 214 file logger_4.c function restart line 46 thread 3
+----------------------------------------------------
+  periodCounter=0u (00000000 00000000 00000000 00000000)
+
+State 215 file logger_4.c function restart line 47 thread 3
+----------------------------------------------------
+  tickCounter=0 (00000000 00000000)
+
+State 216 file logger_4.c function restart line 48 thread 3
+----------------------------------------------------
+  numberOfRecords=0 (00000000)
+
+State 217 file logger_4.c function restart line 49 thread 3
+----------------------------------------------------
+  startTime=0u (00000000 00000000 00000000 00000000)
+
+State 218 file logger_4.c function restart line 50 thread 3
+----------------------------------------------------
+  period=1 (00000000 00000001)
+
+State 219 file logger_4.c function restart line 51 thread 3
+----------------------------------------------------
+  systemState=1 (00000001)
+
+State 221 file logger_4.c function task_communicate line 177 thread 3
+----------------------------------------------------
+  msgBuffer[0l]=1 (00000001)
+
+State 230 file logger_4.c function task_measure line 66 thread 2
+----------------------------------------------------
+  tickCounter=1 (00000000 00000001)
+
+State 238 file logger_4.c function task_measure line 69 thread 2
+----------------------------------------------------
+  value=0 (00000000 00000000)
+
+State 240 file logger_4.c function task_measure line 70 thread 2
+----------------------------------------------------
+  pos=0 (00000000)
+
+State 242 file logger_4.c function task_measure line 71 thread 2
+----------------------------------------------------
+  _startTime=0u (00000000 00000000 00000000 00000000)
+
+State 244 file logger_4.c function task_measure line 72 thread 2
+----------------------------------------------------
+  currentTime=1u (00000000 00000000 00000000 00000001)
+
+State 245 file logger_4.c function task_measure line 74 thread 2
+----------------------------------------------------
+  tickCounter=0 (00000000 00000000)
+
+State 246 file logger_4.c function task_measure line 75 thread 2
+----------------------------------------------------
+  periodCounter=1u (00000000 00000000 00000000 00000001)
+
+State 252 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[0l]=0 (00000000 00000000)
+
+State 253 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[0l]=0 (00000000 00000000)
+
+State 254 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[1l]=0 (00000000 00000000)
+
+State 255 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[2l]=0 (00000000 00000000)
+
+State 256 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[3l]=0 (00000000 00000000)
+
+State 257 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[4l]=0 (00000000 00000000)
+
+State 258 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[5l]=0 (00000000 00000000)
+
+State 259 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[6l]=0 (00000000 00000000)
+
+State 260 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[7l]=0 (00000000 00000000)
+
+State 261 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[8l]=0 (00000000 00000000)
+
+State 262 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[9l]=0 (00000000 00000000)
+
+State 263 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[10l]=0 (00000000 00000000)
+
+State 264 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[11l]=0 (00000000 00000000)
+
+State 265 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[12l]=0 (00000000 00000000)
+
+State 266 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[13l]=0 (00000000 00000000)
+
+State 267 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[14l]=0 (00000000 00000000)
+
+State 268 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[15l]=0 (00000000 00000000)
+
+State 269 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[16l]=0 (00000000 00000000)
+
+State 270 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[17l]=0 (00000000 00000000)
+
+State 271 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[18l]=0 (00000000 00000000)
+
+State 272 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[19l]=0 (00000000 00000000)
+
+State 273 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[20l]=0 (00000000 00000000)
+
+State 274 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[21l]=0 (00000000 00000000)
+
+State 275 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[22l]=0 (00000000 00000000)
+
+State 276 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[23l]=0 (00000000 00000000)
+
+State 277 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[24l]=0 (00000000 00000000)
+
+State 278 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[25l]=0 (00000000 00000000)
+
+State 279 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[26l]=0 (00000000 00000000)
+
+State 280 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[27l]=0 (00000000 00000000)
+
+State 281 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[28l]=0 (00000000 00000000)
+
+State 282 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[29l]=0 (00000000 00000000)
+
+State 283 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[30l]=0 (00000000 00000000)
+
+State 284 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[31l]=0 (00000000 00000000)
+
+State 285 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[32l]=0 (00000000 00000000)
+
+State 286 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[33l]=0 (00000000 00000000)
+
+State 287 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[34l]=0 (00000000 00000000)
+
+State 288 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[35l]=0 (00000000 00000000)
+
+State 289 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[36l]=0 (00000000 00000000)
+
+State 290 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[37l]=0 (00000000 00000000)
+
+State 291 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[38l]=0 (00000000 00000000)
+
+State 292 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[39l]=0 (00000000 00000000)
+
+State 293 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[40l]=0 (00000000 00000000)
+
+State 294 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[41l]=0 (00000000 00000000)
+
+State 295 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[42l]=0 (00000000 00000000)
+
+State 296 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[43l]=0 (00000000 00000000)
+
+State 297 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[44l]=0 (00000000 00000000)
+
+State 298 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[45l]=0 (00000000 00000000)
+
+State 299 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[46l]=0 (00000000 00000000)
+
+State 300 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[47l]=0 (00000000 00000000)
+
+State 301 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[48l]=0 (00000000 00000000)
+
+State 302 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[49l]=0 (00000000 00000000)
+
+State 303 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[50l]=0 (00000000 00000000)
+
+State 304 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[51l]=0 (00000000 00000000)
+
+State 305 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[52l]=0 (00000000 00000000)
+
+State 306 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[53l]=0 (00000000 00000000)
+
+State 307 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[54l]=0 (00000000 00000000)
+
+State 308 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[55l]=0 (00000000 00000000)
+
+State 309 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[56l]=0 (00000000 00000000)
+
+State 310 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[57l]=0 (00000000 00000000)
+
+State 311 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[58l]=0 (00000000 00000000)
+
+State 312 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[59l]=0 (00000000 00000000)
+
+State 313 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[60l]=0 (00000000 00000000)
+
+State 314 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[61l]=0 (00000000 00000000)
+
+State 315 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[62l]=0 (00000000 00000000)
+
+State 316 file logger_4.c function task_measure line 77 thread 2
+----------------------------------------------------
+  records[63l]=0 (00000000 00000000)
+
+State 317 file logger_4.c function task_measure line 78 thread 2
+----------------------------------------------------
+  numberOfRecords=1 (00000001)
+
+State 322 file logger_4.c function task_communicate line 132 thread 4
+----------------------------------------------------
+  buffer=msgBuffer (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 325 file logger_4.c function receive_cmd line 119 thread 4
+----------------------------------------------------
+  msgBuffer[0l]=1 (00000001)
+
+State 328 file logger_4.c function receive_cmd line 120 thread 4
+----------------------------------------------------
+  msgBuffer[1l]=0 (00000000)
+
+State 331 file logger_4.c function receive_cmd line 121 thread 4
+----------------------------------------------------
+  msgBuffer[2l]=0 (00000000)
+
+State 334 file logger_4.c function receive_cmd line 122 thread 4
+----------------------------------------------------
+  msgBuffer[3l]=0 (00000000)
+
+State 337 file logger_4.c function receive_cmd line 123 thread 4
+----------------------------------------------------
+  msgBuffer[4l]=0 (00000000)
+
+State 340 file logger_4.c function receive_cmd line 124 thread 4
+----------------------------------------------------
+  msgBuffer[5l]=0 (00000000)
+
+State 343 file logger_4.c function receive_cmd line 125 thread 4
+----------------------------------------------------
+  msgBuffer[6l]=1 (00000001)
+
+State 347 file logger_4.c function task_communicate line 132 thread 4
+----------------------------------------------------
+  len=0 (00000000)
+
+State 349 file logger_4.c function task_communicate line 133 thread 4
+----------------------------------------------------
+  cmd=1 (00000001)
+
+State 351 file logger_4.c function task_communicate line 134 thread 4
+----------------------------------------------------
+  decodingStatus=0 (00000000)
+
+State 353 file logger_4.c function task_communicate line 136 thread 4
+----------------------------------------------------
+  decodingStatus=1 (00000001)
+
+State 356 file logger_4.c function task_communicate line 142 thread 4
+----------------------------------------------------
+  rspStatus=1 (00000001)
+
+State 366 file logger_4.c function task_communicate line 174 thread 4
+----------------------------------------------------
+  buffer=msgBuffer (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 367 file logger_4.c function task_communicate line 174 thread 4
+----------------------------------------------------
+  pos=1 (00000001)
+
+State 371 file logger_4.c function task_communicate line 174 thread 4
+----------------------------------------------------
+  _startTime=0u (00000000 00000000 00000000 00000000)
+
+State 376 file logger_4.c function task_communicate line 175 thread 4
+----------------------------------------------------
+  buffer=msgBuffer (00000010 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 377 file logger_4.c function task_communicate line 175 thread 4
+----------------------------------------------------
+  pos=5 (00000101)
+
+State 381 file logger_4.c function task_communicate line 175 thread 4
+----------------------------------------------------
+  _period=1 (00000000 00000001)
+
+State 384 file logger_4.c function task_communicate line 176 thread 4
+----------------------------------------------------
+  _startTime=0u (00000000 00000000 00000000 00000000)
+
+State 385 file logger_4.c function task_communicate line 176 thread 4
+----------------------------------------------------
+  _period=1 (00000000 00000001)
+
+State 387 file logger_4.c function restart line 46 thread 4
+----------------------------------------------------
+  periodCounter=0u (00000000 00000000 00000000 00000000)
+
+State 388 file logger_4.c function restart line 47 thread 4
+----------------------------------------------------
+  tickCounter=0 (00000000 00000000)
+
+State 389 file logger_4.c function restart line 48 thread 4
+----------------------------------------------------
+  numberOfRecords=0 (00000000)
+
+State 390 file logger_4.c function restart line 49 thread 4
+----------------------------------------------------
+  startTime=0u (00000000 00000000 00000000 00000000)
+
+State 391 file logger_4.c function restart line 50 thread 4
+----------------------------------------------------
+  period=1 (00000000 00000001)
+
+State 392 file logger_4.c function restart line 51 thread 4
+----------------------------------------------------
+  systemState=1 (00000001)
+
+State 394 file logger_4.c function task_communicate line 177 thread 4
+----------------------------------------------------
+  msgBuffer[0l]=1 (00000001)
+
+Violated property:
+  file logger_4.c function task_measure line 80 thread 2
+  assertion numberOfRecords==pos+1
+  (signed int)numberOfRecords == (signed int)pos + 1
+
+
+
+** 1 of 1 failed (2 iterations)
+VERIFICATION FAILED

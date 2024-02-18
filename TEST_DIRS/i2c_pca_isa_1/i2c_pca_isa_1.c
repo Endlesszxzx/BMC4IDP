@@ -266,7 +266,7 @@ module_init(pca_isa_init);
 module_exit(pca_isa_exit);
 #endif
 
-#define LIMIT 20
+#define LIMIT 5
 void req1();
 void req2();
 void req3();
@@ -275,40 +275,40 @@ void req4();
 int cnt1, cnt2, cnt3, cnt4, cnt5, cnt6;
 
 void req1(void ) {
-    //while(cnt1< LIMIT) {
+    while(cnt1< LIMIT) {
         irq = 1;
         pca_isa_init(1, 1);
         pca_isa_probe(1, 1);
         pca_isa_exit();
         cnt1++;
-    //}
+    }
 }
 
 void req2(void) {
-    //while(cnt2 < LIMIT) {
+    while(cnt2 < LIMIT) {
         irq = 2;
         pca_isa_init(2, 2);
         pca_isa_probe(2, 2);
         pca_isa_exit();
         cnt2++;
-    //}
+    }
 }
 
 void req3(void) {
-    //while(cnt3 < LIMIT) {
+    while(cnt3 < LIMIT) {
         irq = 3;
         pca_isa_init(3, 3);
         pca_isa_probe(3, 3);
         pca_isa_exit();
         cnt3++;
-    //}
+    }
 }
 
 void req4(void) {
-    //while(cnt4 < LIMIT) {
+    while(cnt4 < LIMIT) {
         irq = -1;
         cnt4++;
-    //}
+    }
 }
 
 

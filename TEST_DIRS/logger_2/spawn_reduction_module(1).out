@@ -1,0 +1,61 @@
+CBMC version 5.62.0 (ec1d828-dirty) 64-bit x86_64 linux
+Parsing logger_2.c
+Converting
+Type-checking logger_2
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Runtime Symex: 0.0471952s
+Adding constraints
+using sc expand memory model
+start to make constraint
+290
+success make constraint
+--------------------log constraint nums:------------------
+fr : 116
+fr-begin : 9
+fr-end : 9
+nested-isr : 139
+po : 300
+rf : 86
+rf-begin : 86
+rf-end : 86
+rf-order : 86
+rf-some : 76
+rfi : 7
+spawn-before-fr-false : 15
+spawn-before-ws : 79
+thread-spawn : 157
+ws-begin : 83
+ws-end : 83
+ws-ext : 8
+constraints sum : 1425
+spawn_relaxing_cons_nums: 597
+size of program expression: 2096 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Runtime Postprocess Equation: 0.0621185s
+Passing problem to propositional reduction
+converting SSA
+Runtime Convert SSA: 0.207068s
+Running propositional reduction
+Post-processing
+Runtime Post-process: 0.000229566s
+Solving with MiniSAT 2.2.1 with simplifier
+30291 variables, 130246 clauses
+decisions: 9708
+propagations: 297143
+conflicts: 1157
+SAT checker: instance is UNSATISFIABLE
+Runtime Solver: 0.81577s
+Runtime decision procedure: 1.02301s
+
+** Results:
+logger_2.c function start
+[start.assertion.1] line 57 assertion numberOfRecords==0: SUCCESS
+
+** 0 of 1 failed (1 iterations)
+VERIFICATION SUCCESSFUL

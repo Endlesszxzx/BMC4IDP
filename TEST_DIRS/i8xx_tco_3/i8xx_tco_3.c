@@ -563,7 +563,7 @@ MODULE_DEVICE_TABLE (pci, i8xx_tco_pci_tbl);
 
 static unsigned char __init i8xx_tco_getdevice (void)
 {
-	struct pci_dev *dev = NULL;
+	struct pci_dev *dev = 0;
 	u8 val1, val2;
 	u16 badr;
 	/*
@@ -632,7 +632,7 @@ static int __init watchdog_init (void)
 	spin_lock_init(&tco_lock);
 
 	/* Check whether or not the hardware watchdog is there */
-	if (!i8xx_tco_getdevice () || i8xx_tco_pci == NULL)
+	if (!i8xx_tco_getdevice () || i8xx_tco_pci == 0)
 		return -ENODEV;
 
 	if (!request_region (TCOBASE, 0x10, "i8xx TCO")) {
@@ -707,7 +707,7 @@ MODULE_LICENSE("GPL");
 MODULE_ALIAS_MISCDEV(WATCHDOG_MINOR);
 #endif 
 
-#define LIMIT 20
+#define LIMIT 5
 int cnt1, cnt2, cnt3, cnt4, cnt5, cnt6, cnt7, cnt8;
 void closer1();
 void closer2();
@@ -719,64 +719,64 @@ void writer3();
 void closer1(void) {
     __CPROVER_ASYNC_1:
     writer1(); 
-    //while(cnt1< LIMIT) {
+    while(cnt1< LIMIT) {
         tco_write_buf = 'V';
         i8xx_tco_write(1);
         tco_expect_close = 42;
         //i8xx_tco_release();
         cnt1++;
-    //}
-    return NULL;
+    }
+    return 0;
 }
 
 void closer2(void ) {
-    //while(cnt2<LIMIT) {
+    while(cnt2<LIMIT) {
         tco_write_buf = 'V';
         i8xx_tco_write(1);
         tco_expect_close = 42;
         //i8xx_tco_release();
         cnt2++;
-    //}
-    return NULL;
+    }
+    return 0;
 }
 
 void closer3(void) {
-    //while(cnt3<LIMIT) {
+    while(cnt3<LIMIT) {
         tco_write_buf = 'V';
         i8xx_tco_write(1);
         tco_expect_close = 42;
         i8xx_tco_release();
         cnt3++;
-    //}
-    return NULL;
+    }
+    return 0;
 }
 
 void writer1(void) {
     __CPROVER_ASYNC_1:
     writer2(); 
-    //while(cnt4<LIMIT) {
+    while(cnt4<LIMIT) {
         i8xx_tco_write(0);
         cnt4++;
-    //}
-    return NULL;
+    }
+    return 0;
 }
 
 void writer2(void ) {
     __CPROVER_ASYNC_1:
     writer3(); 
-    //while(cnt5<LIMIT) {
+    while(cnt5<LIMIT) {
         i8xx_tco_write(0);
         cnt5++;
-    //}
-    return NULL;
+    }
+    return 0;
 }
 
 void writer3(void ) {
-    //while(cnt6<LIMIT) {
+    while(cnt6<LIMIT) {
         i8xx_tco_write(0);
         cnt6++;
-    //}
-    return NULL;
+    }
+    return 0;
 }
 
 void *writer4(void *unused) {
@@ -784,146 +784,143 @@ void *writer4(void *unused) {
         i8xx_tco_write(0);
         i8xx_tco_write(0);
     }
-    return NULL;
+    return 0;
 }
 
 void *writer5(void *unused) {
   i8xx_tco_write(0);
-  return NULL;
+  return 0;
 }
 
 void *writer6(void *unused) {
   i8xx_tco_write(0);
-  return NULL;
+  return 0;
 }
 
 void *writer7(void *unused) {
   i8xx_tco_write(0);
-  return NULL;
+  return 0;
 }
 
 void *writer8(void *unused) {
   i8xx_tco_write(0);
-  return NULL;
+  return 0;
 }
 
 void *writer9(void *unused) {
   i8xx_tco_write(0);
-  return NULL;
+  return 0;
 }
 
 void *writer10(void *unused) {
   i8xx_tco_write(0);
-  return NULL;
+  return 0;
 }
 
 void *writer11(void *unused) {
   i8xx_tco_write(0);
-  return NULL;
+  return 0;
 }
 
 void *writer12(void *unused) {
   i8xx_tco_write(0);
-  return NULL;
+  return 0;
 }
 
 void *writer13(void *unused) {
   i8xx_tco_write(0);
-  return NULL;
+  return 0;
 }
 
 void *writer14(void *unused) {
   i8xx_tco_write(0);
-  return NULL;
+  return 0;
 }
 
 void *writer15(void *unused) {
   i8xx_tco_write(0);
-  return NULL;
+  return 0;
 }
 
 void *writer16(void *unused) {
   i8xx_tco_write(0);
-  return NULL;
+  return 0;
 }
 
 void *writer17(void *unused) {
   i8xx_tco_write(0);
-  return NULL;
+  return 0;
 }
 
 void *writer18(void *unused) {
   i8xx_tco_write(0);
-  return NULL;
+  return 0;
 }
 
 void *writer19(void *unused) {
   i8xx_tco_write(0);
-  return NULL;
+  return 0;
 }
 
 void *writer20(void *unused) {
   i8xx_tco_write(0);
-  return NULL;
+  return 0;
 }
 
 void *writer21(void *unused) {
   i8xx_tco_write(0);
-  return NULL;
+  return 0;
 }
 
 void *writer22(void *unused) {
   i8xx_tco_write(0);
-  return NULL;
+  return 0;
 }
 
 void *writer23(void *unused) {
   i8xx_tco_write(0);
-  return NULL;
+  return 0;
 }
 
 void *writer24(void *unused) {
   i8xx_tco_write(0);
-  return NULL;
+  return 0;
 }
 
 void *writer25(void *unused) {
   i8xx_tco_write(0);
-  return NULL;
+  return 0;
 }
 
 void *writer26(void *unused) {
   i8xx_tco_write(0);
-  return NULL;
+  return 0;
 }
 
 void *writer27(void *unused) {
   i8xx_tco_write(0);
-  return NULL;
+  return 0;
 }
 
 void *writer28(void *unused) {
   i8xx_tco_write(0);
-  return NULL;
+  return 0;
 }
 
 void *writer29(void *unused) {
   i8xx_tco_write(0);
-  return NULL;
+  return 0;
 }
 
 void *writer30(void *unused) {
   i8xx_tco_write(0);
-  return NULL;
+  return 0;
 }
 
 // markus: driver code
 int main(int argc, char *argv[]) {
   // initialize
   tco_expect_close = 0;
-  pthread_t t1;
-  pthread_t t2;
-
     __CPROVER_ASYNC_1:
     closer1(); 
     __CPROVER_ASYNC_2:
@@ -932,31 +929,30 @@ int main(int argc, char *argv[]) {
     closer3(); 
   // markus: functions in fops are write, open, release, ioctl
   /*
-  pthread_create(&t2, NULL, closer1, NULL);
-  pthread_create(&t2, NULL, closer2, NULL);
-  pthread_create(&t2, NULL, closer3, NULL);
-  pthread_create(&t1, NULL, writer1, NULL);
-  pthread_create(&t1, NULL, writer2, NULL);
-  pthread_create(&t1, NULL, writer3, NULL);
+  pthread_create(&t2, 0, closer1, 0);
+  pthread_create(&t2, 0, closer2, 0);
+  pthread_create(&t2, 0, closer3, 0);
+  pthread_create(&t1, 0, writer1, 0);
+  pthread_create(&t1, 0, writer2, 0);
+  pthread_create(&t1, 0, writer3, 0);
   */
   /*
-  pthread_create(&t1, NULL, writer5, NULL);
-  pthread_create(&t1, NULL, writer6, NULL);
-  pthread_create(&t1, NULL, writer7, NULL);
-  pthread_create(&t1, NULL, writer8, NULL);
-  pthread_create(&t1, NULL, writer9, NULL);
-  pthread_create(&t1, NULL, writer10, NULL);
-  pthread_create(&t1, NULL, writer11, NULL);
-  pthread_create(&t1, NULL, writer12, NULL);
-  pthread_create(&t1, NULL, writer13, NULL);
-  pthread_create(&t1, NULL, writer14, NULL);
-  pthread_create(&t1, NULL, writer15, NULL);
-  pthread_create(&t1, NULL, writer16, NULL);
-  pthread_create(&t1, NULL, writer17, NULL);
-  pthread_create(&t1, NULL, writer18, NULL);
-  pthread_create(&t1, NULL, writer19, NULL);
-  pthread_create(&t1, NULL, writer20, NULL);
-  pthread_create(&t1, NULL, writer21, NULL);
+  pthread_create(&t1, 0, writer5, 0);
+  pthread_create(&t1, 0, writer6, 0);
+  pthread_create(&t1, 0, writer7, 0);
+  pthread_create(&t1, 0, writer8, 0);
+  pthread_create(&t1, 0, writer9, 0);
+  pthread_create(&t1, 0, writer10, 0);
+  pthread_create(&t1, 0, writer11, 0);
+  pthread_create(&t1, 0, writer12, 0);
+  pthread_create(&t1, 0, writer13, 0);
+  pthread_create(&t1, 0, writer14, 0);
+  pthread_create(&t1, 0, writer15, 0);
+  pthread_create(&t1, 0, writer16, 0);
+  pthread_create(&t1, 0, writer17, 0);
+  pthread_create(&t1, 0, writer18, 0);
+  pthread_create(&t1, 0, writer19, 0);
+  pthread_create(&t1, 0, writer20, 0);
+  pthread_create(&t1, 0, writer21, 0);
   */
-  pthread_exit(NULL);
 }
